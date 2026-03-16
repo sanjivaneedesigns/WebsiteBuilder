@@ -1,0 +1,41 @@
+/* Animation Tokens - Base Design System */
+:root {
+    /* -------------------------------------------------------------------------- */
+    /* ⏳ DURATIONS (ms)                                                          */
+    /* -------------------------------------------------------------------------- */
+    --duration-instant: 50ms;
+    /* State flickers, micro-feedback */
+    --duration-fast: 150ms;
+    /* Button states, tooltips */
+    --duration-std: 300ms;
+    /* Default (modals, dropdowns) */
+    --duration-slow: 500ms;
+    /* Large entrances, section reveals */
+    --duration-hero: 1000ms;
+    /* Cinematic hero sequences */
+    --duration-cinematic: 2000ms;
+    /* Very slow storytelling transitions */
+    /* -------------------------------------------------------------------------- */
+    /* 🌊 EASING CURVES (Personality)                                             */
+    /* -------------------------------------------------------------------------- */
+    /* Precision & Stability (Standard) */
+    --ease-std: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-quart: cubic-bezier(0.5, 0, 0.75, 0);
+    /* Cinematic & Fluid (Dramatic Finish) */
+    --ease-fluid-out: cubic-bezier(0.25, 1, 0.5, 1);
+    /* Circ Out variant */
+    --ease-expo-out: cubic-bezier(0.19, 1, 0.22, 1);
+    --ease-expo-in-out: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+    /* Bouncy & Soft (Engagement) */
+    --ease-back-out: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-bounce-out: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* -------------------------------------------------------------------------- */
+    /* ⚡ TRANSITION PRESETS                                                      */
+    /* -------------------------------------------------------------------------- */
+    --trans-std: all var(--duration-std) var(--ease-std);
+    --trans-fast: all var(--duration-fast) var(--ease-std);
+    --trans-back: all var(--duration-std) var(--ease-back-out);
+    --trans-fade: opacity var(--duration-std) var(--ease-out-quart);
+    --trans-slide: transform var(--duration-slow) var(--ease-out-quart), opacity var(--duration-slow) var(--ease-out-quart);
+}

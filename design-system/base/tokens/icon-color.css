@@ -1,0 +1,27 @@
+/* ==========================================================================
+   Icon Color Tokens
+   design-system/base/tokens/icon-color.css
+   --------------------------------------------------------------------------
+   ALIASED tokens only — no raw values here.
+   Every token points at a base color token (--color-*).
+   Update your color palette once; icon colors update automatically.
+   Dependency: requires your project's color tokens to define --color-* vars.
+   Fallback values are provided so this file is safe to use standalone.
+   ========================================================================== */
+:root {
+    /* --- Semantic icon colors -------------------------------------------- */
+    /* Default icon color — matches body text */
+    --icon-primary: var(--color-foreground, #1a1a2e);
+    /* Muted / supportive icons (labels, decorative) */
+    --icon-secondary: var(--color-muted-foreground, #6b7280);
+    /* Highlighted, active state, or brand accent */
+    --icon-accent: var(--color-accent, #6366f1);
+    /* Error / destructive actions */
+    --icon-danger: var(--color-destructive, #ef4444);
+    /* Confirmed / success state */
+    --icon-success: var(--color-success, #22c55e);
+    /* Non-interactive / disabled icons */
+    --icon-disabled: var(--color-disabled, #d1d5db);
+    /* On-brand filled surfaces (e.g. icon inside coloured button) */
+    --icon-on-accent: var(--color-accent-foreground, #ffffff);
+}
