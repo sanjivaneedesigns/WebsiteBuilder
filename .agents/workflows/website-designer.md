@@ -42,6 +42,3 @@ This workflow guides the agent through the complete design and build process: **
 - Apply motion profiles and micro-interactions within Framer.
 - Ensure responsive behavior across breakpoints (375px, 768px, 1280px, 1440px).
 - **PAUSE** for final sign-off on the Framer design.
-### Phase 6: Final Review & Deploy
-1. User performs manual review of the Framer build.
-2. Publish the Framer site directly, or export code and push to **GitHub MCP** for deployment to Vercel/Netlify.
