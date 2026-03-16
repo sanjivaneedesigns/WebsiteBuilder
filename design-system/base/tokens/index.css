@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Design System Token Entry Point
+   design-system/base/tokens/index.css
+   --------------------------------------------------------------------------
+   Single import for any project:
+     @import url('path/to/design-system/base/tokens/index.css');
+   Load order matters:
+     1. Color tokens first  — defines --color-* base palette
+     2. Icon size           — self-contained, no dependencies
+     3. Icon color          — aliases --color-* tokens defined above
+   If you bring your own color tokens (e.g. from Shadcn, Radix, or a custom
+   palette), import them BEFORE this file so the --color-* vars are already
+   defined when icon-color.css resolves its aliases.
+   ========================================================================== */
+/* 1. Base color palette */
+@import './colors.css';
+/* 2. Animation Scaling & Durations */
+@import './animation.css';
+/* 3. Icon tokens — order is intentional, do not reorder */
+@import './icon-size.css';
+@import './icon-color.css';

@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Icon Size Tokens
+   design-system/base/tokens/icon-size.css
+   --------------------------------------------------------------------------
+   Self-contained scale. No dependencies on other token files.
+   Reference via --icon-{size} everywhere. Never use raw px for icon sizing.
+   ========================================================================== */
+:root {
+  --icon-xs:   12px;   /* Badges, inline labels               */
+  --icon-sm:   16px;   /* Compact UI, table cells             */
+  --icon-md:   20px;   /* Default — aligns with body text     */
+  --icon-lg:   24px;   /* Navigation items, primary buttons   */
+  --icon-xl:   32px;   /* Card headers, feature tiles         */
+  --icon-2xl:  48px;   /* Empty states, section headers       */
+  --icon-3xl:  64px;   /* Hero / illustrative use only        */
+}

@@ -1,0 +1,18 @@
+{
+  "mcpServers": {
+    "apify": {
+      "command": "npx",
+      "args": ["-y", "@apify/actors-mcp-server"],
+      "env": {
+        "APIFY_TOKEN": "apify_api_409HgBEv9COgsw3XD4tX74qTHugyAm0n2r9r"
+      }
+    },
+    "firecrawl": {
+      "command": "npx",
+      "args": ["-y", "firecrawl-mcp"],
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-478d5d1c4c8c4ca7918b3e185af78866"
+      }
+    }
+  }
+}
