@@ -37,7 +37,6 @@
 
 | Metric | Direction |
 |---|---|
-| Sprint count | "10+ Design Sprints Facilitated" |
 | Experience | "8 Years in Design Strategy" |
 | Org types | "30+ Projects Across 20+ Orgs" |
 | Geography tag | "Bengaluru-based. Globally aligned." |

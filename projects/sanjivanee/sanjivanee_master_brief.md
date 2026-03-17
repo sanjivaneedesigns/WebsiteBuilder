@@ -163,12 +163,12 @@ Positioning formula:
 > All other layers (color, motion, spacing, imagery) remain restrained.
 > Typography carries the editorial weight — strong hierarchy, intentional scale contrast, a serif/sans pairing that feels both intelligent and human.
 
-### 5.3 Design Direction Form *(To be completed in Phase 4)*
-- [ ] Typography pairing selected
-- [ ] Color palette defined
-- [ ] Motion profile selected
-- [ ] Imagery direction defined
-- [ ] 3 reference images generated
+### 5.3 Design Direction Form *(Completed — see design_direction.md)*
+- [x] Typography pairing selected — Sora + IBM Plex Sans
+- [x] Color palette defined — Linen + Ink (Terracotta primary, Linen bg, Near-black fg)
+- [x] Motion profile selected — Fluid Out, 300ms, 12px Y-shift, no overshoot
+- [x] Imagery direction defined — Working Portrait, The Room, Outcome Moment
+- [x] 3 reference images art-directed (prompts in design_direction.md §8)
 
 ---
 
