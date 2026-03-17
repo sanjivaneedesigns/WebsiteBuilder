@@ -1,4 +1,4 @@
-# Master Brief — Sanjivanee Borse
+# Master Brief — Sanjivanee
 > IsArtifact: true
 > Last Updated: Phase 3 — Strategy & Blueprinting
 
@@ -8,10 +8,10 @@
 
 | Field | Value |
 |---|---|
-| **Full Name** | Sanjivanee Borse |
+| **Name** | Sanjivanee |
 | **Title** | Design Strategist & Sprint Facilitator |
 | **Location** | India (Bengaluru) |
-| **Experience** | 15+ years in UX and design strategy |
+| **Experience** | 8 years in UX and design strategy |
 | **Primary Service** | Design Sprints |
 | **Secondary Services** | UX Strategy, Capability Building, Team Coaching |
 | **Primary Audience** | Head of Product / VP Product / Head of Design at GCCs in India |
@@ -74,10 +74,12 @@ The existing narrative is credential-led and deliverable-focused. It reads from 
 > North Star Metric: Discovery call bookings.
 
 ### 4.2 Positioning Statement
-> **Sanjivanee Borse is the Design Sprint Strategist for GCC product leaders who need aligned teams, faster decisions, and UX practices that scale.**
+> **Sanjivanee is the Design Sprint Strategist for GCC product leaders who need aligned teams, faster decisions, and UX practices that scale.**
 
 Positioning formula:
 > *[Sanjivanee] is the [Design Sprint Strategist] that [accelerates team alignment and UX maturity] for [GCC product leaders] who [are building world-class product orgs in India but are stuck in misalignment and slow cycles].*
+
+> **Note on name usage:** Brand name is "Sanjivanee" (first name only) across all copy, CTAs, and visual identity.
 
 ### 4.3 Primary Audience Profile
 **Primary Persona: "The GCC Product Builder"**
@@ -97,7 +99,7 @@ Positioning formula:
 | **External Problem** | Misaligned teams, unclear direction, too many opinions, slow cycles |
 | **Internal Frustration** | "I'm not sure we're building the right thing — and time is running out." |
 | **Philosophical Problem** | Teams should ship with confidence, not doubt. Speed and clarity are not opposites. |
-| **The Guide** | Sanjivanee — empathy ("I've been inside these orgs") + authority (X sprints, Y GCCs, Z outcomes) |
+| **The Guide** | Sanjivanee — empathy ("I've been inside these orgs") + authority (10+ sprints, 20+ orgs, 30+ projects) |
 | **The Plan** | 1. Discovery Call → 2. Sprint Design → 3. Sprint Week + Follow-Through |
 | **Success** | Team aligned. Real decision made. Momentum restored. Next sprint already planned. |
 | **Failure** | Another quarter of misalignment. Stakeholders lose faith. Talent gets frustrated and leaves. |

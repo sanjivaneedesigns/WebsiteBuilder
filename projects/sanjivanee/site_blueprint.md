@@ -1,4 +1,4 @@
-# Site Blueprint — Sanjivanee Borse
+# Site Blueprint — Sanjivanee
 > Template: The Authority
 > Goal: Lead Generation (Discovery Call Bookings)
 > Phase: 3 — Approved Blueprint
@@ -37,9 +37,9 @@
 
 | Metric | Direction |
 |---|---|
-| Sprint count | "50+ Design Sprints Facilitated" *(confirm exact number)* |
-| Experience | "15 Years in Design Strategy" |
-| Org types | "30+ Product Teams Across GCCs and Enterprises" *(confirm)* |
+| Sprint count | "10+ Design Sprints Facilitated" |
+| Experience | "8 Years in Design Strategy" |
+| Org types | "30+ Projects Across 20+ Orgs" |
 | Geography tag | "Bengaluru-based. Globally aligned." |
 
 **Alternative if logos available:** Logo Grid (3–5 recognizable client logos in greyscale)
@@ -167,7 +167,7 @@
 **Headline:** "I've been inside these orgs. I know what's at stake."
 
 **Body Direction (3 short paragraphs):**
-1. Where she comes from: 15 years working in and around India's design and product ecosystem — not as an observer, but as a practitioner inside the kinds of orgs she now works with.
+1. Where she comes from: 8 years working in and around India's design and product ecosystem — not as an observer, but as a practitioner inside the kinds of orgs she now works with.
 2. Why she does this: She built this practice because she saw too many capable teams spinning without traction — not for lack of talent, but for lack of focused strategic work.
 3. Who she's for: She works exclusively with product and UX leaders who are ready to make a real decision — not just explore options.
 
@@ -201,12 +201,12 @@
 
 | Element | Content |
 |---|---|
-| **Logo / Name** | Sanjivanee Borse wordmark |
+| **Logo / Name** | Sanjivanee wordmark (first name only) |
 | **Tagline** | "Design Sprint Strategist for GCC Product Leaders" |
 | **Nav links** | Services · Process · Case Studies · About · Contact |
 | **Contact** | Email address (linked) |
 | **Social** | LinkedIn (primary) |
-| **Legal** | © 2025 Sanjivanee Borse. All rights reserved. |
+| **Legal** | © 2025 Sanjivanee. All rights reserved. |
 
 ---
 
