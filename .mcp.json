@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "framer": {
+      "type": "sse",
+      "url": "https://framer-mcp-relay.orange-lamp-studio.workers.dev/mcp?userId=a032e349e67ddd5a1e523cc063fe74d12ef9a9165bce77f15a51198d36e7657c"
+    }
+  }
+}
