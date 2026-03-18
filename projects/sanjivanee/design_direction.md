@@ -1,7 +1,7 @@
 # Design Direction — Sanjivanee
-> Phase 4 — Visual Direction
-> Energy: Precision × Warmth
-> Expressive Layer: Typography
+> Phase 4 — Visual Direction (Revised)
+> Energy: Edge × Craft
+> Expressive Layer: Typography + Color
 
 ---
 
@@ -9,28 +9,28 @@
 
 | | |
 |---|---|
-| **Primary Energy (Structural)** | Precision — sets surfaces, grid, content tokens (60% of UI) |
-| **Secondary Energy (Expressive)** | Warmth — sets brand color and accent (40% of UI) |
-| **Intersection Name** | Boutique Consultancy |
-| **Visual Zone** | "I am rigorous and expert, and I am also a thinking partner who cares about your outcome." |
+| **Primary Energy (Structural)** | Edge — sets surfaces, contrast, typographic boldness (60% of UI) |
+| **Secondary Energy (Expressive)** | Craft — sets brand color, material texture, and considered detail (40% of UI) |
+| **Intersection Name** | Editorial Studio |
+| **Visual Zone** | "I work with precision and intent — and the work itself shows the thinking behind it." |
 
 **What this looks like in practice:**
-The grid is tight. The type hierarchy is strong and intentional. The spacing is generous but structured. Then — in the accent color, in the texture of the background, in the body font's rounded terminals — warmth surfaces. Never soft. Never precious. Just human.
+The background reads like uncoated paper. The type is bold and unapologetic — large display, clear hierarchy, no decoration. One vivid accent carries all the warmth. Grid lines and structure are visible features, not hidden scaffolding. The "happy and warm" quality comes from material texture and a single high-energy accent color — not from earthy neutrals.
 
 ---
 
 ## 2. Typography
 
-**Selected Pairing: #3 — Sora + IBM Plex Sans**
-> Direct match for Precision × Warmth per the font pairing system.
+**Selected Pairing: Custom — Bricolage Grotesque + Manrope**
+> Custom pairing. Bricolage is the display font from pairing #14 (Edge/Craft/Depth). Spectral (its original body match) is dropped in favour of Manrope — a geometric sans from pairings #10/#12 (Clarity/Precision) that provides clean contrast without competing with Bricolage's ink-trap character.
 
 | Role | Font | Rationale |
 |---|---|---|
-| **Display / Hero** | Sora (Bold / ExtraBold) | Geometric ink traps = Precision. Rounded terminals = Warmth. Feels sharp and expert without being cold. |
-| **Heading (H2–H4)** | Sora (SemiBold / Medium) | Consistent family, lighter weight creates hierarchy without introducing a second personality. |
-| **Body / Long-form** | IBM Plex Sans (Regular / Light) | Humanist structure. Designed for reading. Carries warmth through its letter forms. Technical enough to not feel casual. |
-| **Labels / Eyebrow / Captions** | IBM Plex Sans (Medium, tracked +0.08em) | Adds formality to metadata without a separate typeface. |
-| **Monospace (if needed)** | IBM Plex Mono | Optional: for code-adjacent content or stat callouts. Shares Plex DNA, stays coherent. |
+| **Display / Hero** | Bricolage Grotesque (Bold / ExtraBold) | Radical ink traps and wide stance = Edge. Crafted, textural letterforms = Craft. Sets the editorial tone immediately. |
+| **Heading (H2–H4)** | Bricolage Grotesque (SemiBold / Medium) | Consistent family at lighter weight. Hierarchy through weight, not family switching. |
+| **Body / Long-form** | Manrope (Regular / Light) | Geometric sans — highly readable, clean. Provides contrast to Bricolage's character without fighting it. |
+| **Labels / Eyebrow / Captions** | Manrope (Medium, tracked +0.10em) | Slightly more tracking than previous system — suits the editorial metadata style (e.g., `(Client)`, `(Year)` style labels). |
+| **Monospace (if needed)** | IBM Plex Mono | Optional: for code-adjacent content or data callouts. |
 
 ### Typographic Scale (Desktop)
 
@@ -54,39 +54,42 @@ The grid is tight. The type hierarchy is strong and intentional. The spacing is 
 
 ## 3. Color Palette
 
-**Palette Name: Linen + Ink**
-> Precision is structural (cool, high-contrast surfaces). Warmth is expressive (earthy, organic accent). Together: a boutique consultancy that reads as expert, not corporate.
+**Palette Name: Bone & Rose**
+> Edge is structural (high-contrast bone surfaces, warm near-black ink). Craft is expressive (a single vivid warm rose that reads as handmade energy, not corporate). Together: an editorial studio that feels graphic, alive, and warm without leaning into earthy neutrals.
+>
+> The "happy and warm" quality here comes from: (1) the bone background — material, paper-like, not digital white; (2) the rose accent — genuinely warm (red-biased, not blue-pink), vivid enough to pop without being loud. The dark mode commits fully to the high-contrast editorial register.
 
 ### CSS Tokens
 
 ```css
 :root {
-  /* Brand (Warmth — 40%) */
-  --color-primary:    hsl(16, 48%, 44%);   /* Muted Terracotta — warm authority */
-  --color-secondary:  hsl(16, 30%, 58%);   /* Terracotta mid — hover states */
-  --color-accent:     hsl(38, 60%, 52%);   /* Warm Amber — selective highlights */
+  /* Brand (Craft — 40%) */
+  /* One vivid accent. No secondary/terracotta range — Edge × Craft uses singular colour, not a gradient of earthy variants. */
+  --color-primary:    hsl(351, 68%, 58%);   /* Warm Rose — vivid, editorial, red-biased warmth */
+  /* Hover/active state: use primary at 85% opacity or hsl(351, 68%, 50%) */
 
-  /* Surfaces (Precision — 60%) */
-  --color-background: hsl(36, 20%, 97%);   /* Linen — warm off-white, not stark */
-  --color-surface-1:  hsl(36, 15%, 93%);   /* Parchment — card backgrounds */
-  --color-surface-2:  hsl(36, 10%, 89%);   /* Stone — elevated containers */
-  --color-border:     hsl(36, 8%, 84%);    /* Soft rule — low contrast, structural */
+  /* Surfaces (Edge — 60%) */
+  --color-background: hsl(40, 16%, 92%);   /* Bone — uncoated paper quality, not digital white */
+  --color-surface-1:  hsl(38, 12%, 87%);   /* Pressed paper — card backgrounds */
+  --color-surface-2:  hsl(36, 9%, 82%);    /* Deep paper — elevated containers */
+  --color-border:     hsl(36, 7%, 75%);    /* Visible rule — slightly more present than previous system */
 
-  /* Content (Precision — ink-forward) */
-  --color-foreground: hsl(36, 8%, 10%);    /* Near-black with a warm tint */
-  --color-muted-fg:   hsl(36, 5%, 42%);    /* Warm mid-gray — body copy */
-  --color-disabled-fg:hsl(36, 4%, 65%);    /* Placeholder text */
+  /* Content (Edge — ink-forward) */
+  --color-foreground: hsl(22, 15%, 9%);    /* Warm Ink — near-black with red-brown undertone */
+  --color-muted-fg:   hsl(24, 8%, 40%);    /* Warm dark gray — body copy */
+  --color-disabled-fg:hsl(28, 5%, 62%);    /* Placeholder text */
 }
 
-/* Dark Mode */
+/* Dark Mode — Charlotte Day Wilson register: warm charcoal + bright rose */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: hsl(36, 6%, 9%);
-    --color-surface-1:  hsl(36, 5%, 13%);
-    --color-surface-2:  hsl(36, 4%, 17%);
-    --color-border:     hsl(36, 4%, 22%);
-    --color-foreground: hsl(36, 12%, 95%);
-    --color-muted-fg:   hsl(36, 6%, 65%);
+    --color-background: hsl(20, 10%, 7%);    /* Warm near-black — not cold, not pure #000 */
+    --color-surface-1:  hsl(20, 8%, 12%);    /* Warm dark surface */
+    --color-surface-2:  hsl(20, 6%, 17%);    /* Elevated dark */
+    --color-border:     hsl(20, 5%, 22%);    /* Quiet dark rule */
+    --color-foreground: hsl(38, 18%, 94%);   /* Warm off-white — not stark */
+    --color-muted-fg:   hsl(32, 8%, 64%);    /* Warm mid-gray */
+    --color-primary:    hsl(351, 75%, 68%);  /* Brighter rose on dark — more vivid at lower lightness */
   }
 }
 ```
@@ -95,18 +98,26 @@ The grid is tight. The type hierarchy is strong and intentional. The spacing is 
 
 | Swatch | Name | Hex (approx) | Role |
 |---|---|---|---|
-| Linen | Background | `#F9F7F4` | Page background |
-| Parchment | Surface-1 | `#EDEBE6` | Card backgrounds |
-| Near-black | Foreground | `#1C1A18` | Headlines, primary text |
-| Warm gray | Muted FG | `#6B6762` | Body copy, labels |
-| Terracotta | Primary | `#B05A38` | Primary CTAs, links |
-| Amber | Accent | `#C88C3A` | Selective highlights only |
+| Bone | Background | `#E8E4DB` | Page background |
+| Pressed Paper | Surface-1 | `#DEDAD2` | Card backgrounds |
+| Warm Ink | Foreground | `#1C1612` | Headlines, primary text |
+| Warm Dark Gray | Muted FG | `#6A6460` | Body copy, labels |
+| Rose | Primary | `#C9415E` | CTAs, links, active states |
+
+**Dark mode additionally:**
+
+| Swatch | Name | Hex (approx) | Role |
+|---|---|---|---|
+| Warm Near-Black | Background | `#141210` | Dark bg |
+| Warm Off-White | Foreground | `#F1EDE4` | Dark mode text |
+| Bright Rose | Primary | `#E06080` | Dark mode CTAs — vivid on dark |
 
 ### Color Usage Rules
 - **CTA buttons**: `--color-primary` background + white text. Always high contrast.
-- **Accent** (`--color-accent`): Use only once per page — e.g., a step number, an underline, a hover state. Never for body text.
-- **Linen background**: Creates warmth without effort. Let it do its work. Don't override with pure white containers.
-- **Borders**: Visible but quiet. 1px `--color-border`. Never dark.
+- **Hover states**: Primary at `hsl(351, 68%, 50%)` (darkened 8%) — decisive, no softness.
+- **Bone background**: The warmth engine of the light mode. Never override with pure white containers. Let it be the page temperature.
+- **Borders**: More visible than the previous system — 1px `--color-border`. In Edge × Craft, the grid and structure are features, not hidden scaffolding.
+- **One accent rule**: Do not add a second accent. The rose is singular. If you need a dark treatment, use `--color-foreground` (ink) — invert blocks use ink-on-bone rather than introducing new colours.
 
 ---
 
@@ -124,23 +135,23 @@ The grid is tight. The type hierarchy is strong and intentional. The spacing is 
 
 ## 5. Motion Profile
 
-**Intersection Blend: Precision eases × Warmth timing**
+**Intersection Blend: Edge decisiveness × Craft considered timing**
 
 | Property | Value | Rationale |
 |---|---|---|
-| **Primary ease** | `cubic-bezier(0.25, 1, 0.5, 1)` — Fluid Out (Circ Out) | Long, smooth finish. Warm and confident, not snappy. |
-| **Standard duration** | 300ms | Fast enough to feel Precise; long enough to feel deliberate. |
-| **Section entrance duration** | 500ms | `--duration-slow`. Sections settle, not snap. |
-| **Micro-interaction duration** | 150ms | `--duration-fast`. Hover states are instant but smooth. |
-| **Y-axis shift (entrance)** | 12px | Small. No dramatic flying in. Just a gentle settle. |
-| **Stagger (list items)** | 60ms between items | Left-to-right, top-to-bottom. Precision order. |
-| **Overshoot / bounce** | None | Precision rejects it. |
+| **Primary ease** | `cubic-bezier(0.19, 1, 0.22, 1)` — Expo Out | Fast to destination, confident finish. Edge energy: decisive, not lingering. |
+| **Standard duration** | 250ms | Slightly faster than the previous system. Crisp. |
+| **Section entrance duration** | 450ms | Still considered — Craft slows the Edge impulse just enough. |
+| **Micro-interaction duration** | 150ms | `--duration-fast`. Hover states are immediate. |
+| **Y-axis shift (entrance)** | 16px | Slightly more movement than before — Edge permits a more graphic entrance. |
+| **Stagger (list items)** | 50ms between items | Tight stagger. Feels deliberate, not slow. |
+| **Overshoot / bounce** | None | Edge is decisive, not playful. |
 
 ### Motion Rules
-- All section content fades up (opacity 0→1, Y 12px→0) on scroll entrance.
-- Hero headline animates first, subhead second (200ms stagger), CTA third (400ms stagger).
+- All section content fades up (opacity 0→1, Y 16px→0) on scroll entrance.
+- Hero headline animates first, subhead second (200ms stagger), CTA third (350ms stagger).
 - No scroll-jacking. No parallax on mobile.
-- Process step numbers: subtle scale reveal (0.85→1) on scroll, staggered per step.
+- Process step numbers: scale reveal (0.90→1) + fade on scroll, staggered per step.
 
 ---
 
@@ -160,7 +171,7 @@ The grid is tight. The type hierarchy is strong and intentional. The spacing is 
 - Focus on the work surface, not the people. Artifacts visible: Post-its, markers, printed frames.
 - Warm tones. Natural light or warm incandescent.
 - Used as supporting imagery, not hero imagery.
-- Color treatment: slightly desaturated so it doesn't compete with the terracotta accent.
+- Color treatment: slightly desaturated and warm-graded so it sits against bone backgrounds without competing with the rose accent.
 
 ### C. The Outcome Moment (Used in Case Studies)
 - Abstract or detail-level: a decision being written on a whiteboard, a prototype on a device, a team nodding in agreement
@@ -178,46 +189,48 @@ The grid is tight. The type hierarchy is strong and intentional. The spacing is 
 
 | Property | Decision |
 |---|---|
-| **Energy** | Precision × Warmth |
-| **Visual Zone** | Boutique Consultancy |
-| **Expressive Layer** | Typography |
-| **Display Font** | Sora (Bold / ExtraBold) |
-| **Body Font** | IBM Plex Sans (Regular) |
-| **Background** | Linen `#F9F7F4` |
-| **Foreground** | Near-black `#1C1A18` |
-| **Primary / CTA** | Terracotta `#B05A38` |
-| **Accent** | Warm Amber `#C88C3A` |
-| **Motion** | Fluid Out, 300ms standard, 12px Y-shift |
+| **Energy** | Edge × Craft |
+| **Visual Zone** | Editorial Studio |
+| **Expressive Layer** | Typography + Color |
+| **Display Font** | Bricolage Grotesque (Bold / ExtraBold) |
+| **Body Font** | Manrope (Regular / Light) |
+| **Background** | Bone `#E8E4DB` |
+| **Foreground** | Warm Ink `#1C1612` |
+| **Primary / CTA** | Rose `#C9415E` |
+| **Accent** | None — rose is singular |
+| **Dark BG** | Warm Near-Black `#141210` |
+| **Dark Primary** | Bright Rose `#E06080` |
+| **Motion** | Expo Out, 250ms standard, 16px Y-shift |
 | **Grid** | 12-col, 1100px max, 96px section padding |
 
 ---
 
 ## 8. Visual Reference Images (Art Direction)
 
-Three reference images to anchor the visual direction. Use these prompts to source or generate.
+Three reference images to anchor the revised visual direction. Use these prompts to source or generate.
 
 ---
 
-### Reference 1 — Typography as Architecture
+### Reference 1 — Grid as Structure (Editorial Print Register)
 **Prompt / Description:**
-> A minimal editorial layout on warm linen paper. A bold, geometric sans-serif headline ("Precision. Warmth. Strategy.") in near-black ink at large scale, with a short paragraph of smaller humanist sans body text below. Generous white space. A single muted terracotta rule or underline accent. No photography. Pure typography. Feels like a high-end consultancy brochure from a boutique strategy firm. Sora + IBM Plex Sans energy.
+> A large-format poster on warm bone/uncoated paper. A visible grid of thin lines divides the surface into cells. Inside the cells: a mix of bold, wide Grotesque headline type ("Everything around you was made by people") and small collaged images — some in near-black, some in bone. The typography is the star. No color except the paper tone and near-black ink. Feels like a risograph print or a well-designed studio zine. Bricolage Grotesque energy — wide, editorial, crafted.
 
-**Purpose:** Confirms the typographic hierarchy and shows that the Expressive Layer (Typography) can carry the entire design without needing color or imagery to do the heavy lifting.
+**Purpose:** Establishes the bone paper surface, grid structure as a feature, and the ink-on-paper material quality that defines the light mode.
 
 ---
 
-### Reference 2 — The Working Portrait
+### Reference 2 — Dark Editorial with Single Accent
 **Prompt / Description:**
-> A candid photograph of a South Asian woman in her late 30s, photographed in warm natural light. She is standing at a large whiteboard covered in sticky notes and handwritten frameworks. Her posture is confident and engaged — mid-gesture, pointing at something on the board. She's dressed in clean, minimal clothing (not corporate, not casual — smart, considered). The room has warm tones: wood surfaces, natural daylight from a window. The image is slightly warm-graded, slightly desaturated in the shadows. Feels real, not posed.
+> A website screenshot on a warm near-black background (not pure black — a dark brown-charcoal). A large headline in warm off-white Grotesque type. One vivid rose-pink element: a CTA button or a highlighted name, bright against the dark field. Grid lines visible as thin warm-gray rules. The overall feel is graphic, editorial, and alive — the single pink accent does all the emotional work. Manrope body copy in warm off-white, small and clear. Feels like a music or arts event design: high contrast, high energy.
 
-**Purpose:** Sets the standard for Sanjivanee's portrait photography. Art direction for the session or for sourcing a reference.
+**Purpose:** Defines the dark mode register and shows how the rose accent behaves at full contrast. Also anchors the motion towards decisive rather than soft.
 
 ---
 
-### Reference 3 — The Boutique Consultancy Page
+### Reference 3 — Editorial Studio Homepage
 **Prompt / Description:**
-> A screenshot or mockup of a minimal, premium consultancy homepage. Linen/cream background. A large bold headline in a geometric sans ("Move faster. Decide together."). Below it, a short subheadline in a warm gray humanist sans. A single terracotta-colored CTA button ("Book a Call"). Below the fold, a clean row of three small impact stats in near-black with warm gray labels. The feel is: boutique strategy firm meets editorial magazine. Restrained, expert, human. No decoration. No icons. No gradients.
+> A homepage mockup in the bone-and-ink palette. A very large Bricolage Grotesque headline dominates the top — wide, bold, with visible ink traps. Below it, a short Manrope body paragraph in warm dark gray. A metadata row in small tracked Manrope labels: `(Discipline)` `(Location)` `(Availability)` — each followed by a short value. One rose-coloured CTA: `→ Book a Call`. No decorative elements, no gradients, no icons. The grid is perceptible but not forced. Feels like the homepage of a design studio or editorial consultancy that trusts the typography completely.
 
-**Purpose:** Full-page visual anchor. Shows the team what the finished design should feel like before a single line of code is written.
+**Purpose:** Full-page visual anchor for the revised direction. Shows Bricolage + Manrope in hierarchy, bone backgrounds, and the rose accent in context.
 
 ---
