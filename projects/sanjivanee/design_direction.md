@@ -15,7 +15,7 @@
 | **Visual Zone** | "I work with precision and intent — and the work itself shows the thinking behind it." |
 
 **What this looks like in practice:**
-The background reads like uncoated paper. The type is bold and unapologetic — large display, clear hierarchy, no decoration. One vivid accent carries all the warmth. Grid lines and structure are visible features, not hidden scaffolding. The "happy and warm" quality comes from material texture and a single high-energy accent color — not from earthy neutrals.
+The background reads like uncoated paper. The type is bold and unapologetic — large display, clear hierarchy, no decoration. One vivid accent carries the energy. Grid lines and structure are visible features, not hidden scaffolding. The surface does the warmth work — bone in light mode, near-black in dark — so the accent can be cool, precise, and intense without the palette feeling cold.
 
 ---
 
@@ -54,19 +54,19 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
 
 ## 3. Color Palette
 
-**Palette Name: Bone & Rose**
-> Edge is structural (high-contrast bone surfaces, warm near-black ink). Craft is expressive (a single vivid warm rose that reads as handmade energy, not corporate). Together: an editorial studio that feels graphic, alive, and warm without leaning into earthy neutrals.
+**Palette Name: Bone & Klein**
+> Edge is structural (high-contrast bone surfaces, warm near-black ink). Craft is expressive (a single vivid blue that reads with pigment-like intensity — not corporate, not digital, painterly in its depth). Together: an editorial studio that feels graphic, precise, and confident without leaning into earthy neutrals.
 >
-> The "happy and warm" quality here comes from: (1) the bone background — material, paper-like, not digital white; (2) the rose accent — genuinely warm (red-biased, not blue-pink), vivid enough to pop without being loud. The dark mode commits fully to the high-contrast editorial register.
+> The two blues are surface-specific: Klein Blue (`hsl(228, 92%, 40%)`) is optimised for the bone surface — its depth reads like pigment on uncoated paper. Cobalt (`hsl(218, 85%, 62%)`) is optimised for the near-black dark mode surface — brighter, sharper, more clarifying against the ink field. Same editorial family; different tuning for each register.
 
 ### CSS Tokens
 
 ```css
 :root {
   /* Brand (Craft — 40%) */
-  /* One vivid accent. No secondary/terracotta range — Edge × Craft uses singular colour, not a gradient of earthy variants. */
-  --color-primary:    hsl(351, 68%, 58%);   /* Warm Rose — vivid, editorial, red-biased warmth */
-  /* Hover/active state: use primary at 85% opacity or hsl(351, 68%, 50%) */
+  /* One vivid accent. No secondary range — Edge × Craft uses singular colour. */
+  --color-primary:    hsl(228, 92%, 40%);   /* Klein Blue — intense pigment-like depth on bone surface */
+  /* Hover/active state: hsl(228, 92%, 32%) — decisive darkening, no softness */
 
   /* Surfaces (Edge — 60%) */
   --color-background: hsl(40, 16%, 92%);   /* Bone — uncoated paper quality, not digital white */
@@ -80,7 +80,7 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
   --color-disabled-fg:hsl(28, 5%, 62%);    /* Placeholder text */
 }
 
-/* Dark Mode — Charlotte Day Wilson register: warm charcoal + bright rose */
+/* Dark Mode — near-black ink surface + Cobalt: sharp, clarifying, high-contrast editorial */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: hsl(20, 10%, 7%);    /* Warm near-black — not cold, not pure #000 */
@@ -89,7 +89,7 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
     --color-border:     hsl(20, 5%, 22%);    /* Quiet dark rule */
     --color-foreground: hsl(38, 18%, 94%);   /* Warm off-white — not stark */
     --color-muted-fg:   hsl(32, 8%, 64%);    /* Warm mid-gray */
-    --color-primary:    hsl(351, 75%, 68%);  /* Brighter rose on dark — more vivid at lower lightness */
+    --color-primary:    hsl(218, 85%, 62%);  /* Cobalt — lightened for dark surface, retains clarity */
   }
 }
 ```
@@ -102,7 +102,7 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
 | Pressed Paper | Surface-1 | `#DEDAD2` | Card backgrounds |
 | Warm Ink | Foreground | `#1C1612` | Headlines, primary text |
 | Warm Dark Gray | Muted FG | `#6A6460` | Body copy, labels |
-| Rose | Primary | `#C9415E` | CTAs, links, active states |
+| Klein Blue | Primary | `#0A28C4` | CTAs, links, active states — on bone |
 
 **Dark mode additionally:**
 
@@ -110,14 +110,14 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
 |---|---|---|---|
 | Warm Near-Black | Background | `#141210` | Dark bg |
 | Warm Off-White | Foreground | `#F1EDE4` | Dark mode text |
-| Bright Rose | Primary | `#E06080` | Dark mode CTAs — vivid on dark |
+| Cobalt | Primary | `#4C88F1` | Dark mode CTAs — sharp and clarifying on near-black |
 
 ### Color Usage Rules
-- **CTA buttons**: `--color-primary` background + white text. Always high contrast.
-- **Hover states**: Primary at `hsl(351, 68%, 50%)` (darkened 8%) — decisive, no softness.
-- **Bone background**: The warmth engine of the light mode. Never override with pure white containers. Let it be the page temperature.
+- **CTA buttons**: `--color-primary` background + white text. Klein Blue is deep enough for white to pass AAA at normal text sizes.
+- **Hover states**: `hsl(228, 92%, 32%)` (Klein Blue, darkened 8%) — decisive, no softness. Dark mode: `hsl(218, 85%, 55%)`.
+- **Bone background**: The warmth engine of the light mode. The warm ground makes Klein Blue read richer — let it do that work. Never override with pure white containers.
 - **Borders**: More visible than the previous system — 1px `--color-border`. In Edge × Craft, the grid and structure are features, not hidden scaffolding.
-- **One accent rule**: Do not add a second accent. The rose is singular. If you need a dark treatment, use `--color-foreground` (ink) — invert blocks use ink-on-bone rather than introducing new colours.
+- **One accent rule**: Do not add a second accent. Klein Blue / Cobalt is singular. If you need a dark treatment, use `--color-foreground` (ink) — invert blocks use ink-on-bone rather than introducing new colours.
 
 ---
 
@@ -171,7 +171,7 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
 - Focus on the work surface, not the people. Artifacts visible: Post-its, markers, printed frames.
 - Warm tones. Natural light or warm incandescent.
 - Used as supporting imagery, not hero imagery.
-- Color treatment: slightly desaturated and warm-graded so it sits against bone backgrounds without competing with the rose accent.
+- Color treatment: slightly desaturated and warm-graded so it sits against bone backgrounds without competing with the Klein Blue accent.
 
 ### C. The Outcome Moment (Used in Case Studies)
 - Abstract or detail-level: a decision being written on a whiteboard, a prototype on a device, a team nodding in agreement
@@ -196,10 +196,10 @@ The background reads like uncoated paper. The type is bold and unapologetic — 
 | **Body Font** | Manrope (Regular / Light) |
 | **Background** | Bone `#E8E4DB` |
 | **Foreground** | Warm Ink `#1C1612` |
-| **Primary / CTA** | Rose `#C9415E` |
-| **Accent** | None — rose is singular |
+| **Primary / CTA** | Klein Blue `#0A28C4` — on bone surface |
+| **Accent** | None — Klein Blue is singular |
 | **Dark BG** | Warm Near-Black `#141210` |
-| **Dark Primary** | Bright Rose `#E06080` |
+| **Dark Primary** | Cobalt `#4C88F1` — on near-black surface |
 | **Motion** | Expo Out, 250ms standard, 16px Y-shift |
 | **Grid** | 12-col, 1100px max, 96px section padding |
 
@@ -221,16 +221,16 @@ Three reference images to anchor the revised visual direction. Use these prompts
 
 ### Reference 2 — Dark Editorial with Single Accent
 **Prompt / Description:**
-> A website screenshot on a warm near-black background (not pure black — a dark brown-charcoal). A large headline in warm off-white Grotesque type. One vivid rose-pink element: a CTA button or a highlighted name, bright against the dark field. Grid lines visible as thin warm-gray rules. The overall feel is graphic, editorial, and alive — the single pink accent does all the emotional work. Manrope body copy in warm off-white, small and clear. Feels like a music or arts event design: high contrast, high energy.
+> A website screenshot on a warm near-black background (not pure black — a dark brown-charcoal). A large headline in warm off-white Grotesque type. One vivid cobalt-blue element: a CTA button or a highlighted name, bright and clarifying against the dark field. Grid lines visible as thin warm-gray rules. The overall feel is graphic, editorial, and precise — the single cobalt accent does all the structural work. Manrope body copy in warm off-white, small and clear. Feels like a high-contrast poster or editorial magazine: intelligent, high contrast, uncompromising.
 
-**Purpose:** Defines the dark mode register and shows how the rose accent behaves at full contrast. Also anchors the motion towards decisive rather than soft.
+**Purpose:** Defines the dark mode register and shows how the Cobalt accent behaves at full contrast on near-black. Also anchors the motion towards decisive rather than soft.
 
 ---
 
 ### Reference 3 — Editorial Studio Homepage
 **Prompt / Description:**
-> A homepage mockup in the bone-and-ink palette. A very large Bricolage Grotesque headline dominates the top — wide, bold, with visible ink traps. Below it, a short Manrope body paragraph in warm dark gray. A metadata row in small tracked Manrope labels: `(Discipline)` `(Location)` `(Availability)` — each followed by a short value. One rose-coloured CTA: `→ Book a Call`. No decorative elements, no gradients, no icons. The grid is perceptible but not forced. Feels like the homepage of a design studio or editorial consultancy that trusts the typography completely.
+> A homepage mockup in the bone-and-ink palette. A very large Bricolage Grotesque headline dominates the top — wide, bold, with visible ink traps. Below it, a short Manrope body paragraph in warm dark gray. A metadata row in small tracked Manrope labels: `(Discipline)` `(Location)` `(Availability)` — each followed by a short value. One Klein Blue CTA: `→ Book a Call` — intense, almost pigment-like against the warm bone ground. No decorative elements, no gradients, no icons. The grid is perceptible but not forced. Feels like the homepage of a design studio or editorial consultancy that trusts the typography completely.
 
-**Purpose:** Full-page visual anchor for the revised direction. Shows Bricolage + Manrope in hierarchy, bone backgrounds, and the rose accent in context.
+**Purpose:** Full-page visual anchor for the revised direction. Shows Bricolage + Manrope in hierarchy, bone backgrounds, and Klein Blue accent in context — the blue against warm bone is the defining visual contrast of the light mode.
 
 ---
