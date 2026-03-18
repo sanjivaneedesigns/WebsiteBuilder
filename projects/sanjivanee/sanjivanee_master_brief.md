@@ -172,9 +172,18 @@ Positioning formula:
 
 ---
 
-## 6. Phase 5 — Build *(Pending)*
-- [ ] Pass 1 — Skeleton (HTML structure, locked copy)
-- [ ] Pass 2 — Fidelity (CSS tokens, colors, typography, assets)
-- [ ] Pass 3 — Framer Migration
+## 6. Phase 5 — Build *(Complete)*
+- [x] Pass 1 — Skeleton (HTML structure, locked copy)
+- [x] Pass 2 — Fidelity (CSS tokens, colors, typography, assets)
+- [x] Pass 3 — Framer Migration
+
+### Framer Build Notes
+- **Fonts:** Bricolage Grotesque (800/700/600) + Manrope (400/500/600)
+- **Color styles:** `/Brand/Background`, `/Brand/Surface`, `/Brand/Foreground`, `/Brand/Muted`, `/Brand/Primary`, `/Brand/Border`
+- **Text styles:** `/Type/Hero`, `/Type/H1`–`/Type/H3`, `/Type/Body Large`, `/Type/Body`, `/Type/Label`, `/Type/Stat`, `/Type/CTA` + Inverse variants
+- **Sections built:** Nav · Hero · Authority Band · Problem/Solution · Services (3 cards) · Process (4 steps) · Evidence (2 case studies + metrics bar) · Testimonials (3 cards) · About · CTA Close · Footer
+- **Portrait images:** Placeholder frames in Hero and About — replace with real working portraits
+- **Testimonials:** Placeholder quotes and names — replace with real attributed quotes
+- **CTAs:** Calendly link, LinkedIn handle, and email address still need to be wired up
 
 ---
