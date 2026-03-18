@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanjivanee — Design Sprint Strategist for GCC Product Leaders</title>
+  <meta name="description" content="I run Design Sprints for product and UX leaders at Global Capability Centers who need faster decisions, sharper direction, and teams that move with confidence.">
+
+  <!--
+    ============================================================
+    PHASE 5 — PASS 1: SKELETON
+    ============================================================
+    Status:   Structure + locked copy. No visual styling.
+    Next:     Pass 2 — Fidelity (style.css, tokens applied)
+    Sections:
+      1. Hero
+      2. Authority Band
+      3. Problem / Solution
+      4. Services
+      5. Process
+      6. Evidence (Case Studies)
+      7. Testimonials
+      8. About / The Guide
+      9. Close / CTA
+      10. Footer
+    ============================================================
+  -->
+
+  <!-- Fonts: Bricolage Grotesque (Display) + Manrope (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Design System Tokens -->
+  <link rel="stylesheet" href="../../../design-system/base/tokens/index.css">
+
+  <!-- Page Stylesheet — linked in Pass 2 -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+  <!-- ============================================================
+       NAV
+  ============================================================ -->
+  <header class="site-header" role="banner">
+    <nav class="nav container" aria-label="Primary navigation">
+      <a class="nav__wordmark" href="/">Sanjivanee</a>
+      <ul class="nav__links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#evidence">Case Studies</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav__cta btn btn--primary" href="#book">Book a Discovery Call</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         SECTION 1 — HERO
+    ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-headline">
+      <div class="hero__inner container">
+
+        <div class="hero__copy">
+          <p class="eyebrow">For GCC Product &amp; UX Leaders</p>
+          <h1 class="hero__headline" id="hero-headline">
+            Your team is smart.<br>
+            Your timeline is real.<br>
+            Let's get aligned&nbsp;— in five days.
+          </h1>
+          <p class="hero__sub">
+            I run Design Sprints for product and UX leaders at Global Capability Centers
+            who need faster decisions, sharper direction, and teams that move with confidence.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#book">Book a Discovery Call</a>
+            <a class="btn btn--ghost" href="#process">See How a Sprint Works</a>
+          </div>
+        </div>
+
+        <div class="hero__portrait">
+          <!--
+            Working portrait of Sanjivanee.
+            Warm, natural light. Direct or slightly off-camera gaze.
+            NOT a LinkedIn headshot. NOT a posed studio shot.
+          -->
+          <img
+            src="#"
+            alt="Sanjivanee — Design Sprint Strategist, photographed in a working context"
+            width="560"
+            height="640"
+          >
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — AUTHORITY BAND
+         Social proof: dissolve "who is she?" in under 3 seconds
+    ============================================================ -->
+    <section class="authority" id="authority" aria-label="Credentials and scale">
+      <div class="authority__inner container">
+
+        <ul class="authority__metrics" role="list">
+          <li class="authority__metric">
+            <span class="authority__number">8</span>
+            <span class="authority__label">Years in Design Strategy</span>
+          </li>
+          <li class="authority__metric">
+            <span class="authority__number">30+</span>
+            <span class="authority__label">Projects Across 20+ Orgs</span>
+          </li>
+          <li class="authority__metric authority__metric--location">
+            <span class="authority__location">Bengaluru-based.<br>Globally aligned.</span>
+          </li>
+        </ul>
+
+        <!--
+          Alt: Logo grid (3–5 client logos, greyscale) if permissions available.
+          Uncomment and populate when real logos are sourced.
+        -->
+        <!--
+        <ul class="authority__logos" role="list" aria-label="Client organisations">
+          <li><img src="#" alt="[Client name]" width="120" height="40"></li>
+          <li><img src="#" alt="[Client name]" width="120" height="40"></li>
+          <li><img src="#" alt="[Client name]" width="120" height="40"></li>
+        </ul>
+        -->
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — PROBLEM / SOLUTION
+         "You" and "your" dominate. Sanjivanee is not the subject here.
+    ============================================================ -->
+    <section class="problem-solution" id="problem-solution">
+      <div class="problem-solution__inner container">
+
+        <div class="problem-solution__block problem-solution__block--problem">
+          <h2 class="problem-solution__headline">
+            You have the team. You have the mandate.<br>
+            But every meeting ends the same way.
+          </h2>
+          <p class="problem-solution__body">
+            Your roadmap has more opinions than decisions. Your stakeholders want different
+            things. Your team is capable, but they're building in circles. You know something
+            needs to shift — you're just not sure what, or how fast you can move.
+          </p>
+        </div>
+
+        <div class="problem-solution__block problem-solution__block--solution">
+          <h2 class="problem-solution__headline">
+            A Design Sprint doesn't just produce output.<br>
+            It produces clarity.
+          </h2>
+          <p class="problem-solution__body">
+            In five focused days, I'll take your team from "we think we know" to "we know,
+            and here's the evidence." No six-week research cycles. No slide decks full of
+            recommendations. A real prototype, tested with real users, and a real decision
+            — made together.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4 — SERVICES
+         Design Sprint = hero service, largest and most prominent.
+         Capability Building directly addresses the dependency objection.
+    ============================================================ -->
+    <section class="services" id="services" aria-labelledby="services-headline">
+      <div class="services__inner container">
+
+        <h2 class="services__section-title" id="services-headline">What I do</h2>
+
+        <ul class="services__list" role="list">
+
+          <!-- Service 1: Design Sprint — anchor / hero service -->
+          <li class="service service--anchor">
+            <p class="eyebrow">Flagship</p>
+            <h3 class="service__name">Design Sprint</h3>
+            <p class="service__headline">Five Days. One Real Answer.</p>
+            <p class="service__body">
+              The flagship. A focused sprint designed around your specific challenge.
+              Takes your team from divergent thinking to a tested prototype and a clear
+              decision. The fastest path from stuck to moving.
+            </p>
+            <a class="service__cta link-arrow" href="#contact">Tell me about your challenge →</a>
+          </li>
+
+          <!-- Service 2: UX Strategy -->
+          <li class="service">
+            <h3 class="service__name">UX Strategy</h3>
+            <p class="service__headline">A Direction Your Whole Team Can Build Toward.</p>
+            <p class="service__body">
+              For teams that need more than a sprint — a strategic foundation. Service
+              offering, roadmap framing, design principles, and alignment architecture
+              for product orgs building for the long term.
+            </p>
+            <a class="service__cta link-arrow" href="#contact">Tell me about your challenge →</a>
+          </li>
+
+          <!-- Service 3: Capability Building -->
+          <li class="service">
+            <h3 class="service__name">Capability Building</h3>
+            <p class="service__headline">Consultants Leave. Capability Stays.</p>
+            <p class="service__body">
+              Coaching and facilitation for in-house product and design teams. Workshops,
+              mentorship, and embedded practice-building so your team can run this way
+              without me.
+            </p>
+            <a class="service__cta link-arrow" href="#contact">Tell me about your challenge →</a>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5 — PROCESS
+         Clean numbered steps. Single accent on step numbers (Pass 2).
+         No busy flowchart.
+    ============================================================ -->
+    <section class="process" id="process" aria-labelledby="process-headline">
+      <div class="process__inner container">
+
+        <h2 class="process__section-title" id="process-headline">How we work together</h2>
+
+        <ol class="process__steps" role="list">
+
+          <li class="process__step">
+            <span class="process__step-number" aria-hidden="true">01</span>
+            <div class="process__step-content">
+              <h3 class="process__step-name">
+                Discovery Call
+                <span class="process__step-duration">(30 min)</span>
+              </h3>
+              <p class="process__step-body">
+                We talk about your challenge, your team, and your timeline. No sales pitch
+                — just diagnosis. I'll tell you honestly whether a sprint is the right move.
+              </p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__step-number" aria-hidden="true">02</span>
+            <div class="process__step-content">
+              <h3 class="process__step-name">Sprint Design</h3>
+              <p class="process__step-body">
+                I map the sprint challenge, design the five-day agenda, and brief your team.
+                You show up ready. I handle the preparation.
+              </p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__step-number" aria-hidden="true">03</span>
+            <div class="process__step-content">
+              <h3 class="process__step-name">Sprint Week</h3>
+              <p class="process__step-body">
+                Five days of focused work: understand, sketch, decide, prototype, test.
+                Your team participates. Your stakeholders see the output.
+                A real decision gets made.
+              </p>
+            </div>
+          </li>
+
+          <li class="process__step">
+            <span class="process__step-number" aria-hidden="true">04</span>
+            <div class="process__step-content">
+              <h3 class="process__step-name">Follow-Through</h3>
+              <p class="process__step-body">
+                Post-sprint debrief, findings documentation, and a clear next-step
+                recommendation. Some teams go straight into the next sprint. Some need
+                space to absorb and execute. Both are fine.
+              </p>
+            </div>
+          </li>
+
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 6 — EVIDENCE (CASE STUDIES)
+         Outcomes, not outputs. What shifted — not what was delivered.
+         Quotes commented out until real client permission is confirmed.
+    ============================================================ -->
+    <section class="evidence" id="evidence" aria-labelledby="evidence-headline">
+      <div class="evidence__inner container">
+
+        <h2 class="evidence__section-title" id="evidence-headline">What actually shifted</h2>
+
+        <ul class="case-studies" role="list">
+
+          <!-- Case Study A — Decision Velocity -->
+          <li class="case-study">
+            <header class="case-study__header">
+              <p class="eyebrow case-study__tag">GCC &middot; Global Fintech &middot; Bengaluru</p>
+              <p class="case-study__challenge">
+                Mobile onboarding: the team couldn't align on which problem to solve.
+              </p>
+            </header>
+            <div class="case-study__narrative">
+              <p class="case-study__before">
+                The roadmap had stalled. Every meeting generated more opinions. Six months
+                of drop-off data, and no agreement on the root cause.
+              </p>
+              <p class="case-study__during">
+                The sprint surfaced a user mental model mismatch that had been invisible to
+                the team — a gap between how users understood the product and how the team
+                had built it.
+              </p>
+              <p class="case-study__after">
+                The team shipped a tested redesign within four weeks of the sprint. The
+                decision that had taken six months of debate took two hours on day three.
+              </p>
+            </div>
+            <!--
+            <blockquote class="case-study__quote">
+              <p>"[Stakeholder quote — confirm permission before publishing]"</p>
+              <footer>— <cite>[Name, Title, Org type]</cite></footer>
+            </blockquote>
+            -->
+            <a class="case-study__cta link-arrow" href="#">Read the full story →</a>
+          </li>
+
+          <!-- Case Study B — Stakeholder Buy-In -->
+          <li class="case-study">
+            <header class="case-study__header">
+              <p class="eyebrow case-study__tag">India Enterprise Software &middot; Mid-Market</p>
+              <p class="case-study__challenge">
+                Head of Design needed executive buy-in for a new design system investment.
+              </p>
+            </header>
+            <div class="case-study__narrative">
+              <p class="case-study__before">
+                The business case existed. The data existed. The slides existed. But global
+                stakeholders weren't convinced — and without their sign-off, nothing moved.
+              </p>
+              <p class="case-study__during">
+                The sprint produced a working prototype that made the value of the design
+                system tangible — not theoretical. Stakeholders could see, click, and feel
+                the difference.
+              </p>
+              <p class="case-study__after">
+                The prototype became the artifact that got executive sign-off. No 40-slide
+                deck needed. Budget approved within two weeks of the sprint.
+              </p>
+            </div>
+            <!--
+            <blockquote class="case-study__quote">
+              <p>"[Stakeholder quote — confirm permission before publishing]"</p>
+              <footer>— <cite>[Name, Title, Org type]</cite></footer>
+            </blockquote>
+            -->
+            <a class="case-study__cta link-arrow" href="#">Read the full story →</a>
+          </li>
+
+        </ul>
+
+        <!-- Results Metrics Bar -->
+        <ul class="results-metrics" role="list" aria-label="Sprint outcome metrics">
+          <li class="results-metrics__item">
+            <p class="results-metrics__stat">Avg. 3 weeks</p>
+            <p class="results-metrics__label">from sprint kickoff to stakeholder decision</p>
+          </li>
+          <li class="results-metrics__item">
+            <p class="results-metrics__stat">100%</p>
+            <p class="results-metrics__label">of sprint teams report improved alignment post-sprint</p>
+          </li>
+          <li class="results-metrics__item">
+            <p class="results-metrics__stat">Most clients</p>
+            <p class="results-metrics__label">run a second sprint within 90 days</p>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 7 — TESTIMONIALS
+         Human proof — relationship-focused, not output-focused.
+         Placeholders below. Replace with real quotes + permission confirmed.
+    ============================================================ -->
+    <section class="testimonials" id="testimonials" aria-labelledby="testimonials-headline">
+      <div class="testimonials__inner container">
+
+        <h2 class="testimonials__section-title" id="testimonials-headline">From the teams</h2>
+
+        <ul class="testimonials__list" role="list">
+
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p>"I came in skeptical about whether five days could actually change anything.
+              By Wednesday I knew we'd been asking the wrong question for six months."</p>
+            </blockquote>
+            <footer class="testimonial__attribution">
+              <!--
+                <img
+                  class="testimonial__photo"
+                  src="#"
+                  alt="[First Name Last Name]"
+                  width="48"
+                  height="48"
+                >
+              -->
+              <p class="testimonial__name">[First Name Last Name]</p>
+              <p class="testimonial__title">[Title, Org Type]</p>
+            </footer>
+          </li>
+
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p>"[Quote — relationship-focused, not output-focused. How it felt to work with
+              Sanjivanee, not just what was produced.]"</p>
+            </blockquote>
+            <footer class="testimonial__attribution">
+              <p class="testimonial__name">[First Name Last Name]</p>
+              <p class="testimonial__title">[Title, Org Type]</p>
+            </footer>
+          </li>
+
+          <li class="testimonial">
+            <blockquote class="testimonial__quote">
+              <p>"[Quote — relationship-focused, not output-focused. How it felt to work with
+              Sanjivanee, not just what was produced.]"</p>
+            </blockquote>
+            <footer class="testimonial__attribution">
+              <p class="testimonial__name">[First Name Last Name]</p>
+              <p class="testimonial__title">[Title, Org Type]</p>
+            </footer>
+          </li>
+
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 8 — ABOUT / THE GUIDE
+         Brief. Under 120 words of body copy.
+         First person, direct, zero buzzwords. Not a CV.
+    ============================================================ -->
+    <section class="about" id="about" aria-labelledby="about-headline">
+      <div class="about__inner container">
+
+        <div class="about__portrait">
+          <!--
+            Working portrait — warm, natural light.
+            Direct or slightly off-camera gaze. Confident, not performed.
+            Color treatment: slight warm tone grade. Not heavily edited.
+          -->
+          <img
+            src="#"
+            alt="Sanjivanee — photographed in a working context"
+            width="480"
+            height="560"
+          >
+        </div>
+
+        <div class="about__copy">
+          <h2 class="about__headline" id="about-headline">
+            I've been inside these orgs.<br>I know what's at stake.
+          </h2>
+          <p class="about__body">
+            Eight years working in and around India's design and product ecosystem — not
+            as an observer, but as a practitioner inside the kinds of orgs I now work with.
+            I know what it feels like to be a capable team moving in circles.
+          </p>
+          <p class="about__body">
+            I built this practice because I saw too many capable teams spinning without
+            traction — not for lack of talent, but for lack of focused strategic work.
+            A sprint, done right, is that intervention.
+          </p>
+          <p class="about__body">
+            I work exclusively with product and UX leaders who are ready to make a real
+            decision — not just explore options.
+          </p>
+          <p class="about__end-line">If that's you, let's talk.</p>
+          <a class="btn btn--secondary" href="#book">Book a Discovery Call</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 9 — CLOSE / CTA
+         Solid accent-color background. White text. Copy does all the work.
+         No decorative imagery.
+    ============================================================ -->
+    <section class="cta-close" id="book" aria-labelledby="cta-close-headline">
+      <div class="cta-close__inner container">
+
+        <h2 class="cta-close__headline" id="cta-close-headline">Ready to move?</h2>
+        <p class="cta-close__sub">
+          A 30-minute call is all it takes to know if a sprint is right for your team.
+          No obligation. No jargon.
+        </p>
+        <div class="cta-close__actions">
+          <a
+            class="btn btn--primary"
+            href="https://calendly.com/[handle]"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Book a Discovery Call
+          </a>
+          <a class="btn btn--ghost" href="/sprint-readiness-guide">
+            Not ready yet? Download the Sprint Readiness Guide.
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       SECTION 10 — FOOTER
+  ============================================================ -->
+  <footer class="site-footer" id="contact" role="contentinfo">
+    <div class="site-footer__inner container">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__wordmark">Sanjivanee</p>
+        <p class="site-footer__tagline">Design Sprint Strategist for GCC Product Leaders</p>
+      </div>
+
+      <nav class="site-footer__nav" aria-label="Footer navigation">
+        <ul role="list">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#evidence">Case Studies</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="mailto:[email@domain.com]">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__social">
+        <a
+          href="https://linkedin.com/in/[handle]"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Sanjivanee on LinkedIn"
+        >
+          LinkedIn
+        </a>
+      </div>
+
+      <p class="site-footer__legal">
+        <small>&copy; 2025 Sanjivanee. All rights reserved.</small>
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
