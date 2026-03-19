@@ -76,6 +76,18 @@ Corporate. Cluttered. Cold. Generic job board.
 Clean-slate visual rebrand. Elevated, modern, slightly editorial.
 Should feel like a premium consultancy — not a job portal.
 
+### Site Architecture (Single Page, Scroll Navigation)
+
+`Hero → Tabbed Audience Module → Why Metaskills → Social Proof → Contact/Footer`
+
+**Tabbed Audience Module — the core UX mechanic:**
+Sits directly below the first fold. A tab switcher — "I'm Hiring" / "I'm Looking for Work" — that renders two distinct mini-landing pages within the same section. Each tab contains its own value prop, process/how-it-works, and CTA. No scrolling required to switch audiences. The rest of the page (Why Metaskills, Social Proof, Contact) is shared.
+
+| Tab | Content | CTA |
+|---|---|---|
+| I'm Hiring | Employer value prop, how the process works, trust signals | Submit a vacancy / Book a call |
+| I'm Looking for Work | Candidate value prop, what to expect, sectors we place in | Register / Submit CV |
+
 ---
 
 ## Phases To Complete
