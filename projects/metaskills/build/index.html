@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metaskills — Boutique Recruitment, Bengaluru</title>
+  <meta name="description" content="Metaskills is Bengaluru's boutique IT and Leadership recruitment firm. Pre-vetted talent for employers. Genuine advocacy for professionals. Both sides matter.">
+
+  <!--
+    ============================================================
+    PHASE 5 — PASS 1: SKELETON
+    ============================================================
+    Status:   Structure + locked copy. No visual styling.
+    Energy:   Precision × Warmth
+    Fonts:    DM Serif Display (headlines) + DM Sans (body/UI)
+    Next:     Pass 2 — Fidelity (style.css, design tokens applied)
+    Sections:
+      00. Nav
+      01. Hero
+      02. Authority Band
+      03. Tabbed Audience Module (Employers / Talent)
+      04. Why Metaskills
+      05. Social Proof
+      06. Contact
+      07. Footer
+    ============================================================
+  -->
+
+  <!-- Fonts: DM Serif Display (Display) + DM Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet">
+
+  <!-- Design System Tokens -->
+  <link rel="stylesheet" href="../../../design-system/base/tokens/index.css">
+
+  <!-- Page Stylesheet — applied in Pass 2 -->
+  <!-- <link rel="stylesheet" href="style.css"> -->
+
+  <style>
+    /*
+      PASS 1 — SKELETON LAYOUT ONLY
+      No brand colors. No motion. No design tokens applied.
+      Structural grid, spacing, and readability only.
+    */
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      color: #1a1614;
+      background: #f7f4f0;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* --- SKELETON UTILITY --- */
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      line-height: 1.1;
+    }
+
+    h1 { font-size: clamp(48px, 6vw, 72px); }
+    h2 { font-size: clamp(32px, 4vw, 52px); }
+    h3 { font-size: clamp(20px, 2.5vw, 28px); }
+
+    p { font-size: 17px; line-height: 1.7; color: #444; max-width: 600px; }
+
+    section { padding: 96px 0; }
+
+    /* --- SKELETON BUTTONS --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      border-radius: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      border: 1.5px solid currentColor;
+      transition: opacity 0.15s;
+    }
+    .btn--primary { background: #1a1614; color: #f7f4f0; border-color: #1a1614; }
+    .btn--ghost   { background: transparent; color: #1a1614; }
+
+    /* --- ILLUSTRATION PLACEHOLDER --- */
+    .illus-placeholder {
+      background: #e8e3dc;
+      border: 1.5px dashed #c5bdb2;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: #aaa;
+      letter-spacing: 0.06em;
+      text-align: center;
+      padding: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       00 — NAV
+       Sticky top bar. Anchors scroll to sections.
+  ============================================================ -->
+  <header class="site-header" role="banner" id="top" style="position:sticky;top:0;z-index:100;background:#f7f4f0;border-bottom:1px solid #e2dbd2;padding:20px 0;">
+    <nav class="nav container" aria-label="Primary navigation" style="display:flex;align-items:center;justify-content:space-between;gap:32px;">
+
+      <a class="nav__wordmark" href="#top" aria-label="Metaskills home"
+         style="font-family:'DM Serif Display',serif;font-size:22px;text-decoration:none;color:#1a1614;letter-spacing:-0.01em;">
+        Metaskills
+      </a>
+
+      <ul class="nav__links" role="list" style="display:flex;list-style:none;gap:36px;">
+        <li><a href="#for-you" style="font-size:14px;font-weight:500;text-decoration:none;color:#444;">For Employers</a></li>
+        <li><a href="#for-talent" style="font-size:14px;font-weight:500;text-decoration:none;color:#444;">For Talent</a></li>
+        <li><a href="#about" style="font-size:14px;font-weight:500;text-decoration:none;color:#444;">About</a></li>
+        <li><a href="#contact" style="font-size:14px;font-weight:500;text-decoration:none;color:#444;">Contact</a></li>
+      </ul>
+
+      <a class="btn btn--primary nav__cta" href="#contact" style="font-size:13px;padding:10px 20px;">
+        Get in Touch
+      </a>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================================================
+         01 — HERO
+         Typographic-led. Brand statement. Dual CTAs fork the journey.
+         No imagery in hero — type is the visual.
+    ============================================================ -->
+    <section class="hero" id="hero" aria-labelledby="hero-headline"
+             style="padding:120px 0 80px;text-align:center;">
+      <div class="hero__inner container" style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+
+        <p class="eyebrow">Bengaluru · Boutique Recruitment</p>
+
+        <h1 class="hero__headline" id="hero-headline"
+            style="max-width:780px;letter-spacing:-0.02em;">
+          The right hire.<br>The right role.
+        </h1>
+
+        <p class="hero__sub" style="font-size:19px;max-width:520px;text-align:center;color:#555;">
+          We work for both sides of recruitment —<br>
+          with equal care, equal rigour.
+        </p>
+
+        <!-- Dual CTA fork -->
+        <div class="hero__actions" style="display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+          <a class="btn btn--primary" href="#for-employers" id="cta-employer">
+            I'm Hiring &rarr;
+          </a>
+          <a class="btn btn--ghost" href="#for-talent" id="cta-talent">
+            I'm Looking for Work &rarr;
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         02 — AUTHORITY BAND
+         Thin trust bar. Stats + client names. Immediate credibility.
+    ============================================================ -->
+    <section class="authority-band" id="trust" aria-label="Credentials"
+             style="padding:28px 0;border-top:1px solid #e2dbd2;border-bottom:1px solid #e2dbd2;">
+      <div class="container" style="display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;">
+
+        <span style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.04em;">10+ Years</span>
+        <span style="color:#d0c8be;">·</span>
+        <span style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.04em;">SME Business of the Year &rsquo;23</span>
+        <span style="color:#d0c8be;">·</span>
+        <span style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.04em;">IT &amp; Leadership Specialists</span>
+        <span style="color:#d0c8be;">·</span>
+        <span style="font-size:13px;color:#b0a89e;letter-spacing:0.04em;">Keka &nbsp;·&nbsp; Bosch &nbsp;·&nbsp; Incedo</span>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         03 — TABBED AUDIENCE MODULE
+         The centrepiece. Two full experiences in one section.
+         Tab A: Employers · Tab B: Talent
+    ============================================================ -->
+    <section class="audience-module" id="for-you" aria-label="Who we serve" style="padding:96px 0 80px;">
+      <div class="container">
+
+        <!-- Tab Controls -->
+        <div class="tab-controls" role="tablist" aria-label="Choose your path"
+             style="display:flex;gap:0;margin-bottom:64px;border-bottom:1.5px solid #e2dbd2;">
+
+          <button
+            class="tab-btn tab-btn--active"
+            id="tab-employers"
+            role="tab"
+            aria-selected="true"
+            aria-controls="panel-employers"
+            data-target="panel-employers"
+            style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;background:none;border:none;padding:16px 32px 16px 0;cursor:pointer;color:#1a1614;border-bottom:2px solid #1a1614;margin-bottom:-1.5px;">
+            For Employers
+          </button>
+
+          <button
+            class="tab-btn"
+            id="tab-talent"
+            role="tab"
+            aria-selected="false"
+            aria-controls="panel-talent"
+            data-target="panel-talent"
+            style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;background:none;border:none;padding:16px 32px;cursor:pointer;color:#888;border-bottom:2px solid transparent;margin-bottom:-1.5px;">
+            For Talent
+          </button>
+
+        </div>
+
+        <!-- ── TAB A — EMPLOYERS ── -->
+        <div class="tab-panel" id="panel-employers" role="tabpanel" aria-labelledby="tab-employers">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+            <!-- Left: Copy + CTA -->
+            <div>
+              <p class="eyebrow">For Employers</p>
+              <h2 style="margin-bottom:24px;letter-spacing:-0.02em;">
+                Stop sifting.<br>Start hiring.
+              </h2>
+              <p style="margin-bottom:40px;">
+                We do the hard part before you see a single CV —
+                every candidate pre-screened, pre-briefed, genuinely relevant.
+                Your interview time is too valuable for guesswork.
+              </p>
+
+              <!-- Process Steps -->
+              <ol class="process-steps" style="list-style:none;display:flex;flex-direction:column;gap:32px;margin-bottom:48px;">
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: employer-step-01 — "brief" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    01
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">Brief us</h3>
+                    <p style="font-size:15px;">Tell us the role, the culture, and what good looks like.</p>
+                  </div>
+                </li>
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: employer-step-02 — "search/screen" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    02
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">We do the work</h3>
+                    <p style="font-size:15px;">We search, screen, and shortlist. Only the best reach you.</p>
+                  </div>
+                </li>
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: employer-step-03 — "hire/handshake" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    03
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">Hire with confidence</h3>
+                    <p style="font-size:15px;">Interview-ready candidates. Make the call. Done.</p>
+                  </div>
+                </li>
+
+              </ol>
+
+              <!-- Specialisations -->
+              <p style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;">We place in</p>
+              <p style="font-size:14px;color:#666;">
+                IT &amp; Engineering &nbsp;·&nbsp; Leadership &amp; CXO &nbsp;·&nbsp; Product &amp; Digital &nbsp;·&nbsp; Sales &amp; GTM
+              </p>
+
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;">
+                <a class="btn btn--primary" href="#contact" onclick="document.getElementById('contact-type').value='hiring';">
+                  Submit a Vacancy
+                </a>
+                <a class="btn btn--ghost" href="#contact">
+                  Book a Discovery Call
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Illustration placeholder -->
+            <!-- ILLUSTRATION: employer-panel-hero — scene illustration — pictographic.io/notion -->
+            <div class="illus-placeholder" style="height:480px;border-radius:12px;">
+              Illustration placeholder<br><br>
+              pictographic.io / notion style<br>
+              Scene: hiring / team / office life<br>
+              ~480 × 480px
+            </div>
+
+          </div>
+        </div><!-- /panel-employers -->
+
+
+        <!-- ── TAB B — TALENT ── -->
+        <div class="tab-panel" id="panel-talent" role="tabpanel" aria-labelledby="tab-talent" style="display:none;">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+            <!-- Left: Copy + CTA -->
+            <div>
+              <p class="eyebrow">For Talent</p>
+              <h2 style="margin-bottom:24px;letter-spacing:-0.02em;">
+                Your next move<br>deserves more.
+              </h2>
+              <p style="margin-bottom:40px;">
+                We work with a curated network — and we represent you
+                selectively. When we make an introduction, it means something.
+                No spam. No irrelevant JDs.
+              </p>
+
+              <!-- Process Steps -->
+              <ol class="process-steps" style="list-style:none;display:flex;flex-direction:column;gap:32px;margin-bottom:48px;">
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: talent-step-01 — "profile/person" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    01
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">Tell us your story</h3>
+                    <p style="font-size:15px;">Where you are, where you want to go.</p>
+                  </div>
+                </li>
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: talent-step-02 — "match/search" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    02
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">We find the fit</h3>
+                    <p style="font-size:15px;">Active roles and upcoming ones that actually match your level and goals.</p>
+                  </div>
+                </li>
+
+                <li style="display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;">
+                  <!-- ILLUSTRATION: talent-step-03 — "ready/prepared" — pictographic.io/notion -->
+                  <div class="illus-placeholder" style="width:56px;height:56px;flex-shrink:0;">
+                    03
+                  </div>
+                  <div>
+                    <h3 style="font-size:18px;margin-bottom:6px;">Walk in ready</h3>
+                    <p style="font-size:15px;">Full brief before every intro. No surprises.</p>
+                  </div>
+                </li>
+
+              </ol>
+
+              <!-- Sectors -->
+              <p style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:8px;">We place in</p>
+              <p style="font-size:14px;color:#666;">
+                IT &amp; Engineering &nbsp;·&nbsp; Product &amp; Technology &nbsp;·&nbsp; Leadership &amp; Strategy &nbsp;·&nbsp; Digital &amp; E-commerce
+              </p>
+
+              <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:40px;">
+                <a class="btn btn--primary" href="#contact" onclick="document.getElementById('contact-type').value='looking';">
+                  Share Your CV
+                </a>
+                <a class="btn btn--ghost" href="#contact">
+                  See Open Roles
+                </a>
+              </div>
+            </div>
+
+            <!-- Right: Illustration placeholder -->
+            <!-- ILLUSTRATION: talent-panel-hero — scene illustration — pictographic.io/notion -->
+            <div class="illus-placeholder" style="height:480px;border-radius:12px;">
+              Illustration placeholder<br><br>
+              pictographic.io / notion style<br>
+              Scene: career growth / journey / person exploring<br>
+              ~480 × 480px
+            </div>
+
+          </div>
+        </div><!-- /panel-talent -->
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         04 — WHY METASKILLS
+         3 brand pillars. Founder pull-quote. Human layer.
+    ============================================================ -->
+    <section class="why-section" id="about" aria-labelledby="why-headline"
+             style="background:#f0ebe3;padding:96px 0;">
+      <div class="container">
+
+        <p class="eyebrow">Why Metaskills</p>
+        <h2 id="why-headline" style="margin-bottom:72px;letter-spacing:-0.02em;max-width:480px;">
+          Boutique by choice.<br>Not by accident.
+        </h2>
+
+        <!-- 3 Pillars -->
+        <div class="pillars" style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-bottom:80px;">
+
+          <div class="pillar">
+            <!-- ILLUSTRATION: pillar-01 — "quality/filter" — pictographic.io/notion -->
+            <div class="illus-placeholder" style="width:72px;height:72px;margin-bottom:24px;">
+              ✦
+            </div>
+            <h3 style="font-size:20px;margin-bottom:12px;">Pre-vetted, always</h3>
+            <p style="font-size:15px;">
+              Most candidates don't make our shortlist. That's the point.
+              Your time is protected before the process begins.
+            </p>
+          </div>
+
+          <div class="pillar">
+            <!-- ILLUSTRATION: pillar-02 — "founder/person" — pictographic.io/notion -->
+            <div class="illus-placeholder" style="width:72px;height:72px;margin-bottom:24px;">
+              ✦
+            </div>
+            <h3 style="font-size:20px;margin-bottom:12px;">Founder-led</h3>
+            <p style="font-size:15px;">
+              Neelanjana has led every key placement since 2015.
+              You work with the expert — not through one.
+            </p>
+          </div>
+
+          <div class="pillar">
+            <!-- ILLUSTRATION: pillar-03 — "balance/both sides" — pictographic.io/notion -->
+            <div class="illus-placeholder" style="width:72px;height:72px;margin-bottom:24px;">
+              ✦
+            </div>
+            <h3 style="font-size:20px;margin-bottom:12px;">Both sides win</h3>
+            <p style="font-size:15px;">
+              Employers and talent are both our clients.
+              We advocate for quality on either side of the table.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Founder Pull Quote -->
+        <blockquote style="border-left:2px solid #c5bdb2;padding-left:32px;max-width:560px;">
+          <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:22px;line-height:1.4;color:#2a2420;margin-bottom:16px;">
+            "We built Metaskills because recruitment could — and should — feel better. For everyone."
+          </p>
+          <cite style="font-size:13px;font-weight:500;color:#888;letter-spacing:0.06em;text-transform:uppercase;font-style:normal;">
+            Neelanjana Choudhury &nbsp;·&nbsp; Founder, Metaskills
+          </cite>
+        </blockquote>
+
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         05 — SOCIAL PROOF
+         Employer + candidate voices. Cards, text only.
+    ============================================================ -->
+    <section class="proof-section" id="proof" aria-labelledby="proof-headline" style="padding:96px 0;">
+      <div class="container">
+
+        <p class="eyebrow">What they say</p>
+
+        <div class="testimonials" style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:48px;">
+
+          <article class="testimonial-card"
+                   style="background:#f0ebe3;border:1px solid #e2dbd2;border-radius:8px;padding:36px;">
+            <blockquote>
+              <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;line-height:1.5;color:#2a2420;margin-bottom:24px;">
+                "Two agencies before Metaskills. The difference was obvious from the first shortlist — every candidate was genuinely relevant."
+              </p>
+              <footer>
+                <cite style="font-size:12px;font-weight:500;color:#888;letter-spacing:0.08em;text-transform:uppercase;font-style:normal;">
+                  Head of People &nbsp;·&nbsp; Series B SaaS
+                </cite>
+              </footer>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card"
+                   style="background:#f0ebe3;border:1px solid #e2dbd2;border-radius:8px;padding:36px;">
+            <blockquote>
+              <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;line-height:1.5;color:#2a2420;margin-bottom:24px;">
+                "They didn't just find me a job. They found me the right one — and told me when a role wasn't right, which no one else had done."
+              </p>
+              <footer>
+                <cite style="font-size:12px;font-weight:500;color:#888;letter-spacing:0.08em;text-transform:uppercase;font-style:normal;">
+                  Senior Engineering Manager &nbsp;·&nbsp; Placed 2023
+                </cite>
+              </footer>
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card"
+                   style="background:#f0ebe3;border:1px solid #e2dbd2;border-radius:8px;padding:36px;">
+            <blockquote>
+              <p style="font-family:'DM Serif Display',serif;font-style:italic;font-size:18px;line-height:1.5;color:#2a2420;margin-bottom:24px;">
+                "Neelanjana knows the market, knows her candidates, and doesn't waste your time. Rare."
+              </p>
+              <footer>
+                <cite style="font-size:12px;font-weight:500;color:#888;letter-spacing:0.08em;text-transform:uppercase;font-style:normal;">
+                  Co-Founder &nbsp;·&nbsp; Bengaluru-based Startup
+                </cite>
+              </footer>
+            </blockquote>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ============================================================
+         06 — CONTACT
+         Smart form. Radio pre-qualifies the lead.
+         CTA links in tabs pass context via JS.
+    ============================================================ -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-headline"
+             style="background:#f0ebe3;padding:96px 0;">
+      <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;">
+
+        <!-- Left: Headline + info -->
+        <div>
+          <p class="eyebrow">Let's Talk</p>
+          <h2 id="contact-headline" style="letter-spacing:-0.02em;margin-bottom:24px;">
+            Ready when<br>you are.
+          </h2>
+          <p style="margin-bottom:40px;">
+            Hiring or exploring — it always starts with a conversation.
+          </p>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <a href="mailto:hello@metaskillsrecruitment.com"
+               style="font-size:15px;color:#444;text-decoration:none;">
+              hello@metaskillsrecruitment.com
+            </a>
+            <a href="https://linkedin.com/company/metaskills-recruitment-training-consulting"
+               target="_blank" rel="noopener noreferrer"
+               style="font-size:15px;color:#444;text-decoration:none;">
+              LinkedIn
+            </a>
+            <span style="font-size:15px;color:#888;">Bengaluru, India</span>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <form class="contact-form" name="metaskills-contact" method="POST"
+              style="display:flex;flex-direction:column;gap:20px;">
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div>
+              <label for="name" style="display:block;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:6px;">Name</label>
+              <input type="text" id="name" name="name" required placeholder="Your name"
+                     style="width:100%;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;border:1.5px solid #d0c8be;border-radius:4px;background:#f7f4f0;color:#1a1614;outline:none;">
+            </div>
+            <div>
+              <label for="email" style="display:block;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:6px;">Email</label>
+              <input type="email" id="email" name="email" required placeholder="you@company.com"
+                     style="width:100%;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;border:1.5px solid #d0c8be;border-radius:4px;background:#f7f4f0;color:#1a1614;outline:none;">
+            </div>
+          </div>
+
+          <!-- Pre-qualifying radio — receives context from tab CTAs -->
+          <fieldset style="border:none;padding:0;">
+            <legend style="font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:10px;">I am</legend>
+            <div style="display:flex;gap:24px;">
+              <label style="display:flex;align-items:center;gap:8px;font-size:15px;cursor:pointer;">
+                <input type="radio" name="contact-type" id="contact-type" value="hiring" style="accent-color:#1a1614;">
+                Hiring for my company
+              </label>
+              <label style="display:flex;align-items:center;gap:8px;font-size:15px;cursor:pointer;">
+                <input type="radio" name="contact-type" value="looking" style="accent-color:#1a1614;">
+                Looking for my next role
+              </label>
+            </div>
+          </fieldset>
+
+          <div>
+            <label for="message" style="display:block;font-size:12px;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:#888;margin-bottom:6px;">Tell us more</label>
+            <textarea id="message" name="message" rows="4" placeholder="Share a bit about what you're looking for…"
+                      style="width:100%;padding:12px 16px;font-family:'DM Sans',sans-serif;font-size:15px;border:1.5px solid #d0c8be;border-radius:4px;background:#f7f4f0;color:#1a1614;outline:none;resize:vertical;"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary" style="align-self:flex-start;padding:14px 32px;font-size:15px;">
+            Send &rarr;
+          </button>
+
+        </form>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       07 — FOOTER
+  ============================================================ -->
+  <footer class="site-footer" role="contentinfo"
+          style="background:#1a1614;color:#f7f4f0;padding:48px 0;">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;">
+
+      <div>
+        <a href="#top" style="font-family:'DM Serif Display',serif;font-size:20px;color:#f7f4f0;text-decoration:none;display:block;margin-bottom:6px;">
+          Metaskills
+        </a>
+        <p style="font-size:13px;color:#888;max-width:none;margin:0;">Boutique Recruitment. Real Results.</p>
+      </div>
+
+      <nav aria-label="Footer navigation">
+        <ul style="display:flex;list-style:none;gap:32px;flex-wrap:wrap;">
+          <li><a href="#for-you" style="font-size:13px;color:#aaa;text-decoration:none;">For Employers</a></li>
+          <li><a href="#for-talent" style="font-size:13px;color:#aaa;text-decoration:none;">For Talent</a></li>
+          <li><a href="#about" style="font-size:13px;color:#aaa;text-decoration:none;">About</a></li>
+          <li><a href="#contact" style="font-size:13px;color:#aaa;text-decoration:none;">Contact</a></li>
+          <li>
+            <a href="https://linkedin.com/company/metaskills-recruitment-training-consulting"
+               target="_blank" rel="noopener noreferrer"
+               style="font-size:13px;color:#aaa;text-decoration:none;">LinkedIn</a>
+          </li>
+        </ul>
+      </nav>
+
+      <p style="font-size:12px;color:#555;max-width:none;margin:0;">
+        &copy; 2025 Metaskills Recruitment &amp; Training Consulting
+      </p>
+
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT — TAB SWITCHER
+       Minimal. Handles tab switching + nav anchor context.
+       No libraries. Pass 2 will add transition animations.
+  ============================================================ -->
+  <script>
+    (function () {
+      const tabs    = document.querySelectorAll('.tab-btn');
+      const panels  = document.querySelectorAll('.tab-panel');
+
+      function activateTab(targetId) {
+        tabs.forEach(function (btn) {
+          const isActive = btn.dataset.target === targetId;
+          btn.setAttribute('aria-selected', isActive);
+          btn.style.color        = isActive ? '#1a1614' : '#888';
+          btn.style.borderBottom = isActive ? '2px solid #1a1614' : '2px solid transparent';
+        });
+        panels.forEach(function (panel) {
+          panel.style.display = panel.id === targetId ? 'block' : 'none';
+        });
+      }
+
+      tabs.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activateTab(btn.dataset.target);
+        });
+      });
+
+      // Hero CTAs activate the correct tab then scroll to section
+      document.getElementById('cta-employer').addEventListener('click', function (e) {
+        e.preventDefault();
+        activateTab('panel-employers');
+        document.getElementById('for-you').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      document.getElementById('cta-talent').addEventListener('click', function (e) {
+        e.preventDefault();
+        activateTab('panel-talent');
+        document.getElementById('for-you').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Nav "For Talent" link activates talent tab
+      document.querySelector('a[href="#for-talent"]').addEventListener('click', function (e) {
+        e.preventDefault();
+        activateTab('panel-talent');
+        document.getElementById('for-you').scrollIntoView({ behavior: 'smooth' });
+      });
+
+      // Contact form radio pre-selection from tab CTAs
+      // (Tab CTAs set a value attr on the first radio as a hint)
+      document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          const val = link.getAttribute('onclick');
+          if (!val) return;
+          const match = val.match(/value='(\w+)'/);
+          if (match) {
+            const radio = document.querySelector('input[name="contact-type"][value="' + match[1] + '"]');
+            if (radio) radio.checked = true;
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

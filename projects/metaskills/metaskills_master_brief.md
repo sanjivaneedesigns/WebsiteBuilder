@@ -127,4 +127,6 @@ Sits directly below the first fold. A tab switcher — "I'm Hiring" / "I'm Looki
 - [x] Phase 2: Competitive Research
 - [x] Phase 3: Strategy & Blueprint
 - [x] Phase 4: Visual Direction
-- [ ] Phase 5: Build (Pass 1 → Pass 2 → Framer)
+- [x] Phase 5: Build — Pass 1 (skeleton complete)
+- [ ] Phase 5: Build — Pass 2 (design tokens + illustrations)
+- [ ] Phase 5: Build — Pass 3 (Framer migration)
