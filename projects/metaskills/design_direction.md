@@ -118,15 +118,27 @@ Editorial. Generous. Content breathes.
 
 ## Imagery Direction
 
-**Rule:** No stock photography. Typography and space do the visual work.
+**Rule:** No stock photography. Illustrations + typography do the visual work.
 
-- **Hero:** Pure typographic treatment. Large serif headline, sub-copy, dual CTAs. Optional: a single abstract geometric mark or thin rule — nothing more.
-- **Tab module:** Icon set for process steps (line-drawn, not filled — Lucide or Phosphor icons at 1.5px stroke weight).
-- **Why Metaskills pillars:** Small decorative marks or numbers — not illustration, not photography.
-- **Social Proof:** Text cards only. Name + title + quote. No headshots (unless real client photos are provided).
-- **Contact:** Clean form on a cream surface. No imagery.
+**Illustration Style: Pictographic.io — Essentials / Notion collection**
+Line-weight illustrations with a clean, editorial quality. Minimal fill, expressive line. Pairs naturally with the DM Serif Display / DM Sans typographic system without competing.
 
-**If imagery is used at all:** Abstract, textural — e.g., a close crop of woven fabric, paper texture, or architectural detail. Never handshakes, offices, or smiling professionals looking at laptops.
+**Illustration slots (SVGs to source from pictographic.io):**
+
+| Section | Slot | Count | Notes |
+|---|---|---|---|
+| Hero | Optional accent illustration | 0–1 | Subtle, sits beside or below headline |
+| Employer tab — process | Step icons (Share brief, We screen, Hire) | 3 | Small, line-style |
+| Candidate tab — process | Step icons (Share profile, We match, Walk in prepared) | 3 | Small, line-style — can reuse set |
+| Why Metaskills pillars | Pillar icons (Quality, Founder, Both sides) | 3 | Medium, centred above copy |
+
+**Total SVGs needed: ~6–9** (some may be shared across employer/candidate tabs)
+
+**Placeholder strategy (Pass 1 → Pass 2):**
+Pass 1 build will use dimensioned placeholder boxes with `<!-- ILLUSTRATION: [slot-name] pictographic.io/notion -->` comments. Real SVGs swapped in at Pass 2.
+
+**Photography:** Still none. No handshakes, no office shots, no stock people.
+**Colour treatment on illustrations:** Apply terracotta (`--color-accent`) as stroke/fill tint to keep all illustrations on-palette.
 
 ---
 
