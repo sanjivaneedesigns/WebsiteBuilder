@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unfold Ideas — Innovation Platform for Enterprises & Universities</title>
+  <meta name="description" content="Unfold Ideas is the structured innovation platform built for enterprises and universities. Launch challenges, collect ideas, and create solutions — all in one place.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --bg:          #FAFAFA;
+      --bg-alt:      #F4F1FF;
+      --bg-warm:     #FFFBF5;
+
+      --primary:     #3D1FA5;
+      --primary-hov: #2E1680;
+      --primary-mid: #6B3FE7;
+      --primary-tint: rgba(61,31,165,0.07);
+      --primary-border: rgba(61,31,165,0.14);
+
+      --accent:      #F5A623;
+      --accent-lt:   rgba(245,166,35,0.12);
+      --green:       #10B981;
+      --green-lt:    rgba(16,185,129,0.10);
+
+      --fg:          #0A0618;
+      --fg-mid:      #4E4168;
+      --fg-sub:      #8A7EA0;
+
+      --surface:     #FFFFFF;
+      --border:      rgba(61,31,165,0.10);
+      --border-md:   rgba(61,31,165,0.18);
+
+      --sh-sm: 0 1px 4px rgba(10,6,24,.06);
+      --sh-md: 0 4px 16px rgba(10,6,24,.08), 0 1px 4px rgba(10,6,24,.04);
+      --sh-lg: 0 12px 40px rgba(10,6,24,.10), 0 4px 12px rgba(10,6,24,.05);
+      --sh-card: 0 2px 8px rgba(61,31,165,.07), 0 1px 3px rgba(61,31,165,.04);
+
+      --r-sm:  8px;
+      --r-md:  14px;
+      --r-lg:  22px;
+      --r-xl:  30px;
+
+      --f-head: 'Manrope', sans-serif;
+      --f-body: 'Source Sans 3', sans-serif;
+
+      --sec: clamp(80px, 9vw, 116px);
+      --wrap: 1200px;
+
+      --ease: cubic-bezier(.4,0,.2,1);
+      --ease-back: cubic-bezier(.34,1.56,.64,1);
+    }
+
+    /* ── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--f-body);
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a   { text-decoration: none; color: inherit; }
+    ul  { list-style: none; }
+
+    /* ── LAYOUT ─────────────────────────────────────────────── */
+    .wrap {
+      max-width: var(--wrap);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 48px);
+    }
+
+    /* ── BUTTONS ─────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: .9rem;
+      border-radius: var(--r-md);
+      padding: 13px 24px;
+      border: none;
+      cursor: pointer;
+      transition: background 140ms var(--ease), transform 140ms var(--ease), box-shadow 140ms var(--ease), border-color 140ms var(--ease), color 140ms var(--ease);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--primary-hov);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(61,31,165,.28);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--fg);
+      border: 1.5px solid var(--border-md);
+    }
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+    .btn-lg {
+      font-size: 1rem;
+      padding: 15px 30px;
+    }
+    .btn-white {
+      background: #fff;
+      color: var(--primary);
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(0,0,0,.18);
+    }
+    .btn-ghost {
+      background: rgba(255,255,255,.1);
+      color: rgba(255,255,255,.92);
+      border: 1.5px solid rgba(255,255,255,.25);
+    }
+    .btn-ghost:hover {
+      background: rgba(255,255,255,.18);
+      border-color: rgba(255,255,255,.5);
+    }
+
+    /* ── NAVIGATION ──────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 200;
+      background: rgba(250,250,250,.88);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow 300ms var(--ease);
+    }
+    .nav.scrolled { box-shadow: 0 4px 24px rgba(10,6,24,.06); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: -.025em;
+      color: var(--fg);
+    }
+    .nav-logo span { color: var(--primary); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+    .nav-links a {
+      font-family: var(--f-body);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--fg-mid);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      transition: color 140ms var(--ease);
+    }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      padding-top: 68px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Ambient gradient background */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 78% 15%, rgba(245,166,35,.14) 0%, transparent 58%),
+        radial-gradient(ellipse 45% 50% at 15% 85%, rgba(107,63,231,.09) 0%, transparent 55%),
+        radial-gradient(ellipse 55% 65% at 50% 50%, transparent 30%, rgba(250,250,250,1) 80%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 48px;
+      width: 100%;
+    }
+    .hero-content { position: relative; z-index: 1; padding: clamp(48px,7vw,88px) 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-tint);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      font-family: var(--f-head);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .eyebrow .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+
+    .hero-h1 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: clamp(38px, 4.8vw, 66px);
+      line-height: 1.07;
+      letter-spacing: -.032em;
+      color: var(--fg);
+      margin-bottom: 24px;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--primary) 20%, var(--primary-mid) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-family: var(--f-body);
+      font-size: clamp(16px, 1.4vw, 19px);
+      color: var(--fg-mid);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ── HERO VISUAL ─────────────────────────────────────────── */
+    .hero-visual {
+      position: relative;
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Orbital rings */
+    .orbit {
+      position: absolute;
+      border-radius: 50%;
+      border: 1.5px solid rgba(61,31,165,.10);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      animation: spin-slow linear infinite;
+    }
+    .orbit-1 { width: 460px; height: 460px; animation-duration: 60s; }
+    .orbit-2 { width: 350px; height: 350px; animation-duration: 45s; border-style: dashed; opacity: .55; }
+    .orbit-3 { width: 240px; height: 240px; animation-duration: 30s; }
+
+    @keyframes spin-slow {
+      from { transform: translate(-50%,-50%) rotate(0deg); }
+      to   { transform: translate(-50%,-50%) rotate(360deg); }
+    }
+
+    /* Floating cards */
+    .step-card {
+      position: absolute;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 24px 26px;
+      box-shadow: var(--sh-card);
+      width: 196px;
+      transition: transform 300ms var(--ease-back), box-shadow 300ms var(--ease);
+      animation: float ease-in-out infinite alternate;
+    }
+    .step-card:hover {
+      transform: translateY(-6px) scale(1.03) !important;
+      box-shadow: var(--sh-lg);
+    }
+
+    @keyframes float {
+      from { transform: translateY(0px); }
+      to   { transform: translateY(-8px); }
+    }
+
+    .card-1 {
+      top: 5%;  left: 8%;
+      animation-duration: 4s;
+      animation-delay: 0s;
+      background: linear-gradient(145deg,#fff 0%,#F5F3FF 100%);
+    }
+    .card-2 {
+      top: 38%; left: 30%;
+      animation-duration: 4.8s;
+      animation-delay: .8s;
+      background: linear-gradient(145deg,#fff 0%,#EFF6FF 100%);
+    }
+    .card-3 {
+      top: 65%; left: 54%;
+      animation-duration: 5.4s;
+      animation-delay: 1.6s;
+      background: linear-gradient(145deg,#fff 0%,#ECFDF5 100%);
+    }
+
+    .card-step-no {
+      font-family: var(--f-head);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+    .card-1 .card-icon { background: rgba(245,166,35,.12); }
+    .card-2 .card-icon { background: rgba(61,31,165,.08); }
+    .card-3 .card-icon { background: rgba(16,185,129,.10); }
+    .card-label {
+      font-family: var(--f-head);
+      font-size: .9rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      color: var(--fg);
+      line-height: 1.25;
+    }
+
+    /* Sparkle accents */
+    .sparkle {
+      position: absolute;
+      color: var(--accent);
+      font-size: 22px;
+      opacity: .55;
+      animation: pulse 3s ease-in-out infinite;
+    }
+    .sp-1 { top: 7%; right: 10%; font-size: 28px; }
+    .sp-2 { bottom: 15%; left: 5%; font-size: 16px; animation-delay: 1.5s; }
+    @keyframes pulse {
+      0%,100% { opacity: .4; transform: scale(1); }
+      50%      { opacity: .8; transform: scale(1.15); }
+    }
+
+    /* ── TRUST STRIP ─────────────────────────────────────────── */
+    .trust-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+      padding: 26px 0;
+    }
+    .trust-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(28px, 4vw, 56px);
+      flex-wrap: wrap;
+    }
+    .t-stat { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+    .t-val {
+      font-family: var(--f-head);
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .t-lbl {
+      font-family: var(--f-body);
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--fg-sub);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+    .t-div { width: 1px; height: 30px; background: var(--border); }
+
+    /* ── SECTION COMMONS ─────────────────────────────────────── */
+    .sec { padding: var(--sec) 0; }
+    .sec-alt { background: var(--bg-alt); }
+    .sec-warm { background: var(--bg-warm); }
+
+    .sec-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--f-head);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 14px;
+    }
+    .sec-label::before {
+      content: '';
+      width: 16px;
+      height: 2px;
+      background: var(--accent);
+    }
+    .sec-h2 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: clamp(26px, 3.2vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -.025em;
+      color: var(--fg);
+      margin-bottom: 14px;
+    }
+    .sec-sub {
+      font-family: var(--f-body);
+      font-size: clamp(15px, 1.15vw, 17.5px);
+      color: var(--fg-mid);
+      line-height: 1.72;
+    }
+    .tc { text-align: center; }
+
+    /* ── HOW IT WORKS ────────────────────────────────────────── */
+    .how-header {
+      max-width: 580px;
+      margin: 0 auto 68px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 28px;
+      position: relative;
+    }
+    /* Connector line */
+    .steps-grid::after {
+      content: '';
+      position: absolute;
+      top: 42px;
+      left: calc(16.67% + 24px);
+      right: calc(16.67% + 24px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--border) 0%, var(--primary-mid) 50%, var(--border) 100%);
+      z-index: 0;
+    }
+    .step-item {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 34px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+      transition: border-color 280ms var(--ease), box-shadow 280ms var(--ease), transform 280ms var(--ease);
+    }
+    .step-item:hover {
+      border-color: var(--border-md);
+      box-shadow: var(--sh-md);
+      transform: translateY(-3px);
+    }
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1rem;
+      color: #fff;
+      background: var(--primary);
+      flex-shrink: 0;
+    }
+    .step-item:nth-child(2) .step-num { background: linear-gradient(135deg, var(--primary), var(--primary-mid)); }
+    .step-item:nth-child(3) .step-num { background: var(--primary-mid); }
+    .step-h3 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -.015em;
+      color: var(--fg);
+    }
+    .step-p {
+      font-family: var(--f-body);
+      font-size: .92rem;
+      color: var(--fg-mid);
+      line-height: 1.72;
+      flex: 1;
+    }
+    .step-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .step-bullets li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--f-body);
+      font-size: .84rem;
+      color: var(--fg-mid);
+    }
+    .step-bullets li::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* ── USE CASES ───────────────────────────────────────────── */
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-top: 52px;
+    }
+    .uc-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 36px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow 280ms var(--ease), transform 280ms var(--ease), border-color 280ms var(--ease);
+    }
+    .uc-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--primary-mid));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 300ms var(--ease);
+    }
+    .uc-card:hover { box-shadow: var(--sh-lg); transform: translateY(-4px); border-color: var(--border-md); }
+    .uc-card:hover::after { transform: scaleX(1); }
+    .uc-icon {
+      width: 54px; height: 54px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 22px;
+    }
+    .uc-card:nth-child(1) .uc-icon { background: var(--accent-lt); }
+    .uc-card:nth-child(2) .uc-icon { background: var(--primary-tint); }
+    .uc-card:nth-child(3) .uc-icon { background: var(--green-lt); }
+    .uc-h3 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1.18rem;
+      letter-spacing: -.015em;
+      color: var(--fg);
+      margin-bottom: 10px;
+    }
+    .uc-p {
+      font-family: var(--f-body);
+      font-size: .92rem;
+      color: var(--fg-mid);
+      line-height: 1.72;
+      margin-bottom: 22px;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      font-family: var(--f-body);
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 100px;
+      background: var(--bg-alt);
+      color: var(--primary);
+      border: 1px solid var(--primary-border);
+    }
+
+    /* ── FEATURES ────────────────────────────────────────────── */
+    .feat-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    .feat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .feat-item {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-lg);
+      padding: 22px 20px;
+      transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease);
+    }
+    .feat-item:hover { border-color: var(--border-md); box-shadow: var(--sh-sm); }
+    .feat-ico { font-size: 22px; margin-bottom: 10px; }
+    .feat-h4 {
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--fg);
+      margin-bottom: 5px;
+    }
+    .feat-p {
+      font-family: var(--f-body);
+      font-size: .82rem;
+      color: var(--fg-mid);
+      line-height: 1.65;
+    }
+    .feat-copy .sec-label { margin-bottom: 14px; }
+    .feat-copy .sec-sub { margin-bottom: 30px; }
+
+    /* ── PILLARS ─────────────────────────────────────────────── */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 28px;
+      margin-top: 60px;
+    }
+    .pillar {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 38px 28px;
+      text-align: center;
+      transition: box-shadow 280ms var(--ease), transform 280ms var(--ease);
+    }
+    .pillar:hover { box-shadow: var(--sh-md); transform: translateY(-3px); }
+    .pillar-ico-wrap {
+      width: 68px; height: 68px;
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 30px;
+      margin: 0 auto 22px;
+    }
+    .pillar:nth-child(1) .pillar-ico-wrap { background: var(--accent-lt); }
+    .pillar:nth-child(2) .pillar-ico-wrap { background: var(--primary-tint); }
+    .pillar:nth-child(3) .pillar-ico-wrap { background: var(--green-lt); }
+    .pillar-h3 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1.15rem;
+      letter-spacing: -.015em;
+      color: var(--fg);
+      margin-bottom: 11px;
+    }
+    .pillar-p {
+      font-family: var(--f-body);
+      font-size: .92rem;
+      color: var(--fg-mid);
+      line-height: 1.72;
+    }
+
+    /* ── TESTIMONIALS ────────────────────────────────────────── */
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+      margin-top: 52px;
+    }
+    .testi-card {
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      padding: 30px 26px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .testi-mark {
+      font-family: var(--f-head);
+      font-size: 3.5rem;
+      color: var(--accent);
+      line-height: .4;
+      margin-bottom: 10px;
+    }
+    .testi-q {
+      font-family: var(--f-body);
+      font-size: .96rem;
+      color: var(--fg);
+      line-height: 1.72;
+      flex: 1;
+    }
+    .testi-author { display: flex; align-items: center; gap: 12px; }
+    .t-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--primary-mid));
+      color: #fff;
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: .82rem;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .t-name {
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: .86rem;
+      color: var(--fg);
+    }
+    .t-role {
+      font-family: var(--f-body);
+      font-size: .78rem;
+      color: var(--fg-sub);
+      margin-top: 2px;
+    }
+
+    /* ── CTA SECTION ─────────────────────────────────────────── */
+    .cta-sec {
+      background: var(--primary);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 90% at 85% 50%, rgba(107,63,231,.65) 0%, transparent 58%),
+        radial-gradient(ellipse 40% 55% at 8% 80%, rgba(245,166,35,.18) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 660px;
+      margin: 0 auto;
+      padding: var(--sec) 0;
+    }
+    .cta-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.20);
+      color: rgba(255,255,255,.9);
+      font-family: var(--f-head);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      border-radius: 100px;
+      margin-bottom: 26px;
+    }
+    .cta-h2 {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: clamp(26px, 3.8vw, 46px);
+      letter-spacing: -.03em;
+      line-height: 1.1;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+    .cta-p {
+      font-family: var(--f-body);
+      font-size: 1.02rem;
+      color: rgba(255,255,255,.76);
+      line-height: 1.68;
+      margin-bottom: 38px;
+    }
+    .cta-btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    .footer {
+      background: var(--fg);
+      color: rgba(255,255,255,.68);
+      padding: 64px 0 32px;
+    }
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+    .foot-brand {
+      font-family: var(--f-head);
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .foot-brand span { color: var(--accent); }
+    .foot-desc {
+      font-family: var(--f-body);
+      font-size: .86rem;
+      line-height: 1.72;
+      max-width: 250px;
+      margin-bottom: 22px;
+    }
+    .foot-col-hd {
+      font-family: var(--f-head);
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+      margin-bottom: 14px;
+    }
+    .foot-links { display: flex; flex-direction: column; gap: 9px; }
+    .foot-links a {
+      font-family: var(--f-body);
+      font-size: .88rem;
+      color: rgba(255,255,255,.68);
+      transition: color 130ms var(--ease);
+    }
+    .foot-links a:hover { color: #fff; }
+    .foot-bottom {
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .foot-copy {
+      font-family: var(--f-body);
+      font-size: .78rem;
+      color: rgba(255,255,255,.38);
+    }
+
+    /* ── SCROLL REVEAL ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 580ms var(--ease), transform 580ms var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: 70ms;  }
+    .d2 { transition-delay: 140ms; }
+    .d3 { transition-delay: 210ms; }
+
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero-grid    { grid-template-columns: 1fr; }
+      .hero-visual  { display: none; }
+      .hero-content { padding: clamp(40px,8vw,72px) 0; }
+
+      .steps-grid   { grid-template-columns: 1fr; }
+      .steps-grid::after { display: none; }
+
+      .usecase-grid { grid-template-columns: 1fr; }
+
+      .feat-layout  { grid-template-columns: 1fr; gap: 48px; }
+
+      .pillars-grid  { grid-template-columns: 1fr; }
+      .testi-grid    { grid-template-columns: 1fr; }
+
+      .foot-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+    @media (max-width: 640px) {
+      .nav-links   { display: none; }
+      .feat-grid   { grid-template-columns: 1fr; }
+      .foot-grid   { grid-template-columns: 1fr; }
+      .t-div       { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════ NAVIGATION ════════════════ -->
+<nav class="nav" id="nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Unfold <span>Ideas</span></a>
+      <ul class="nav-links">
+        <li><a href="#platform">Platform</a></li>
+        <li><a href="#use-cases">Use Cases</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+      <a href="#demo" class="btn btn-primary">Request a Demo</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════ HERO ════════════════ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+
+      <!-- Left: copy -->
+      <div class="hero-content">
+        <div class="eyebrow"><span class="dot"></span>Innovation Platform</div>
+        <h1 class="hero-h1">From <em>Ideas</em><br>to Solutions</h1>
+        <p class="hero-sub">
+          Built for enterprises and universities that believe creativity is the engine of progress.
+          Launch challenges, collect ideas, and create real-world solutions — all in one structured platform.
+        </p>
+        <div class="hero-ctas">
+          <a href="#demo"     class="btn btn-primary btn-lg">Request a Demo</a>
+          <a href="#platform" class="btn btn-outline  btn-lg">Explore the Platform</a>
+        </div>
+      </div>
+
+      <!-- Right: visual -->
+      <div class="hero-visual">
+        <!-- Orbital rings -->
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
+
+        <!-- Floating step cards -->
+        <div class="step-card card-1">
+          <div class="card-step-no">Step 01</div>
+          <div class="card-icon">🚀</div>
+          <div class="card-label">Launch<br>Challenge</div>
+        </div>
+        <div class="step-card card-2">
+          <div class="card-step-no">Step 02</div>
+          <div class="card-icon">💡</div>
+          <div class="card-label">Collect<br>Ideas</div>
+        </div>
+        <div class="step-card card-3">
+          <div class="card-step-no">Step 03</div>
+          <div class="card-icon">✨</div>
+          <div class="card-label">Create<br>Solutions</div>
+        </div>
+
+        <!-- Sparkles -->
+        <span class="sparkle sp-1">✦</span>
+        <span class="sparkle sp-2">✦</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TRUST STRIP ════════════════ -->
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-inner">
+      <div class="t-stat">
+        <span class="t-val">500+</span>
+        <span class="t-lbl">Ideas Collected</span>
+      </div>
+      <div class="t-div"></div>
+      <div class="t-stat">
+        <span class="t-val">20+</span>
+        <span class="t-lbl">Organizations</span>
+      </div>
+      <div class="t-div"></div>
+      <div class="t-stat">
+        <span class="t-val">95%</span>
+        <span class="t-lbl">Engagement Rate</span>
+      </div>
+      <div class="t-div"></div>
+      <div class="t-stat">
+        <span class="t-val">3 Roles</span>
+        <span class="t-lbl">Supported Natively</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ HOW IT WORKS ════════════════ -->
+<section class="sec" id="platform">
+  <div class="wrap">
+    <div class="how-header tc">
+      <div class="sec-label">How It Works</div>
+      <h2 class="sec-h2">An experience built for innovation</h2>
+      <p class="sec-sub">Unfold Ideas isn't just a tool — it's a structured experience that guides your organization from a raw problem statement to actionable, validated solutions.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-item reveal">
+        <div class="step-num">01</div>
+        <h3 class="step-h3">Launch a Challenge</h3>
+        <p class="step-p">Define your innovation brief and invite participants from across your organization or ecosystem. Set timelines, themes, and success criteria with guided templates.</p>
+        <ul class="step-bullets">
+          <li>Customizable challenge templates</li>
+          <li>Multi-role participant management</li>
+          <li>Structured problem framing tools</li>
+        </ul>
+      </div>
+
+      <div class="step-item reveal d1">
+        <div class="step-num">02</div>
+        <h3 class="step-h3">Collect Ideas</h3>
+        <p class="step-p">Participants submit, refine, and build on ideas in a structured workspace. AI-assisted clustering surfaces the most promising concepts from the crowd.</p>
+        <ul class="step-bullets">
+          <li>Guided idea submission forms</li>
+          <li>Real-time collaboration tools</li>
+          <li>AI-powered idea clustering</li>
+        </ul>
+      </div>
+
+      <div class="step-item reveal d2">
+        <div class="step-num">03</div>
+        <h3 class="step-h3">Create Solutions</h3>
+        <p class="step-p">Expert panels evaluate top ideas and teams develop them into actionable plans. Track implementation milestones and measure real-world impact from a central dashboard.</p>
+        <ul class="step-bullets">
+          <li>Structured evaluation rubrics</li>
+          <li>Expert panel management</li>
+          <li>Impact tracking dashboard</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ USE CASES ════════════════ -->
+<section class="sec sec-alt" id="use-cases">
+  <div class="wrap">
+    <div class="tc" style="max-width:580px;margin:0 auto">
+      <div class="sec-label">Use Cases</div>
+      <h2 class="sec-h2">Built for the way your organization innovates</h2>
+      <p class="sec-sub">Whether you're running an internal program or an open hackathon, Unfold Ideas adapts to your context and maturity level.</p>
+    </div>
+
+    <div class="usecase-grid">
+      <div class="uc-card reveal">
+        <div class="uc-icon">🏢</div>
+        <h3 class="uc-h3">Enterprise Innovation</h3>
+        <p class="uc-p">Run structured internal innovation programs that unlock creative potential across departments. Go from challenge brief to validated solutions, faster — without the chaos.</p>
+        <div class="tags">
+          <span class="tag">Internal Programs</span>
+          <span class="tag">Cross-functional</span>
+          <span class="tag">Employee Engagement</span>
+        </div>
+      </div>
+
+      <div class="uc-card reveal d1">
+        <div class="uc-icon">🎓</div>
+        <h3 class="uc-h3">University Innovation</h3>
+        <p class="uc-p">Empower students and faculty to solve real-world challenges. Build an innovation culture on campus and connect academic talent with industry-scale problems.</p>
+        <div class="tags">
+          <span class="tag">Student Hackathons</span>
+          <span class="tag">Industry Partnerships</span>
+          <span class="tag">Research Challenges</span>
+        </div>
+      </div>
+
+      <div class="uc-card reveal d2">
+        <div class="uc-icon">⚡</div>
+        <h3 class="uc-h3">Innovation Events</h3>
+        <p class="uc-p">Host high-energy hackathons, conclaves, and open innovation summits with all the infrastructure to manage participants, ideas, and judges in one seamless platform.</p>
+        <div class="tags">
+          <span class="tag">Hackathons</span>
+          <span class="tag">Conclaves</span>
+          <span class="tag">Open Innovation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ PLATFORM FEATURES ════════════════ -->
+<section class="sec" id="features">
+  <div class="wrap">
+    <div class="feat-layout">
+
+      <!-- Feature tiles -->
+      <div class="feat-grid">
+        <div class="feat-item reveal">
+          <div class="feat-ico">🎯</div>
+          <h4 class="feat-h4">Challenge Designer</h4>
+          <p class="feat-p">Craft compelling innovation challenges with guided templates and smart framing tools.</p>
+        </div>
+        <div class="feat-item reveal d1">
+          <div class="feat-ico">💬</div>
+          <h4 class="feat-h4">Idea Studio</h4>
+          <p class="feat-p">A collaborative workspace where teams develop and refine ideas before submission.</p>
+        </div>
+        <div class="feat-item reveal d1">
+          <div class="feat-ico">🤖</div>
+          <h4 class="feat-h4">AI Synthesis</h4>
+          <p class="feat-p">Automatically cluster hundreds of submissions and surface breakthrough insights in seconds.</p>
+        </div>
+        <div class="feat-item reveal d2">
+          <div class="feat-ico">📊</div>
+          <h4 class="feat-h4">Evaluation Engine</h4>
+          <p class="feat-p">Structured scoring rubrics and panel management for fair, transparent idea assessment.</p>
+        </div>
+        <div class="feat-item reveal d2">
+          <div class="feat-ico">📈</div>
+          <h4 class="feat-h4">Impact Dashboard</h4>
+          <p class="feat-p">Track ideas from submission to implementation with real-time analytics and milestones.</p>
+        </div>
+        <div class="feat-item reveal d3">
+          <div class="feat-ico">🔗</div>
+          <h4 class="feat-h4">Integrations</h4>
+          <p class="feat-p">Connect with your existing tools — Slack, Microsoft Teams, Jira, and more.</p>
+        </div>
+      </div>
+
+      <!-- Copy -->
+      <div class="feat-copy">
+        <div class="sec-label">Platform</div>
+        <h2 class="sec-h2">Everything you need to run world-class innovation</h2>
+        <p class="sec-sub">Unfold Ideas brings together the tools, structure, and intelligence to make every innovation initiative a success — whether it's your first program or your fiftieth.</p>
+        <a href="#demo" class="btn btn-primary btn-lg">See the Platform in Action</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ WHY UNFOLD IDEAS ════════════════ -->
+<section class="sec sec-warm">
+  <div class="wrap">
+    <div class="tc" style="max-width:520px;margin:0 auto">
+      <div class="sec-label">Why Unfold Ideas</div>
+      <h2 class="sec-h2">Designed around how people actually innovate</h2>
+      <p class="sec-sub">Three principles guide everything we build.</p>
+    </div>
+
+    <div class="pillars-grid">
+      <div class="pillar reveal">
+        <div class="pillar-ico-wrap">🤝</div>
+        <h3 class="pillar-h3">Approachable</h3>
+        <p class="pillar-p">Intuitive design that works equally well for first-time participants and seasoned innovation leads. No long onboarding — just log in and start creating.</p>
+      </div>
+      <div class="pillar reveal d1">
+        <div class="pillar-ico-wrap">🏆</div>
+        <h3 class="pillar-h3">Authoritative</h3>
+        <p class="pillar-p">Built on proven ideation frameworks used by leading enterprises and universities. Every feature is designed with expert-led, outcome-driven processes in mind.</p>
+      </div>
+      <div class="pillar reveal d2">
+        <div class="pillar-ico-wrap">⚡</div>
+        <h3 class="pillar-h3">Energetic</h3>
+        <p class="pillar-p">Creativity thrives on positive energy. Unfold Ideas creates an experience that motivates, inspires, and makes every participant genuinely excited to contribute.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ TESTIMONIALS ════════════════ -->
+<section class="sec">
+  <div class="wrap">
+    <div class="tc" style="max-width:500px;margin:0 auto">
+      <div class="sec-label">Stories</div>
+      <h2 class="sec-h2">Trusted by innovators across sectors</h2>
+    </div>
+
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div>
+          <div class="testi-mark">"</div>
+          <p class="testi-q">The platform made it incredibly easy to manage our innovation conclave. Participants stayed engaged throughout, and the quality of ideas exceeded our expectations.</p>
+        </div>
+        <div class="testi-author">
+          <div class="t-avatar">RK</div>
+          <div>
+            <div class="t-name">Ravi Kumar</div>
+            <div class="t-role">Innovation Lead, Enterprise</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d1">
+        <div>
+          <div class="testi-mark">"</div>
+          <p class="testi-q">Unfold Ideas transformed how we run student hackathons at St. Joseph's University. The structured approach helped students think much more deeply about real problems.</p>
+        </div>
+        <div class="testi-author">
+          <div class="t-avatar">SP</div>
+          <div>
+            <div class="t-name">Prof. Sunitha Pillai</div>
+            <div class="t-role">Dean of Innovation, St. Joseph's University</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-card reveal d2">
+        <div>
+          <div class="testi-mark">"</div>
+          <p class="testi-q">We went from 0 to 200 ideas in 48 hours. The AI synthesis helped us identify patterns we would have completely missed manually. A remarkable platform.</p>
+        </div>
+        <div class="testi-author">
+          <div class="t-avatar">AM</div>
+          <div>
+            <div class="t-name">Aisha Mehta</div>
+            <div class="t-role">Chief Strategy Officer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ CTA ════════════════ -->
+<section class="cta-sec" id="demo">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div class="cta-badge">✦ Get Started Today</div>
+      <h2 class="cta-h2">Ready to unfold your organization's best ideas?</h2>
+      <p class="cta-p">Join enterprises and universities already using Unfold Ideas to run structured, inspiring, and outcome-driven innovation programs.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn btn-white  btn-lg">Request a Demo</a>
+        <a href="#platform" class="btn btn-ghost btn-lg">Explore the Platform</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="footer" id="pricing">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">Unfold <span>Ideas</span></div>
+        <p class="foot-desc">The innovation platform for enterprises and universities that believe creativity is the engine of progress.</p>
+      </div>
+      <div>
+        <div class="foot-col-hd">Platform</div>
+        <ul class="foot-links">
+          <li><a href="#platform">How It Works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#">Integrations</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-hd">Use Cases</div>
+        <ul class="foot-links">
+          <li><a href="#use-cases">Enterprise</a></li>
+          <li><a href="#use-cases">Universities</a></li>
+          <li><a href="#use-cases">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="foot-col-hd">Company</div>
+        <ul class="foot-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#demo">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2025 Unfold Ideas. All rights reserved.</div>
+      <div class="foot-copy">unfoldideas.in</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll shadow
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.12 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
